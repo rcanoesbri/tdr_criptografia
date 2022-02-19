@@ -1,0 +1,19 @@
+{
+  "name": "tdr_criptografia",
+  "version": "0.1.0",
+  "description": "TDR Criptografia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcanoesbri/tdr_criptografia.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rcanoesbri/tdr_criptografia/issues"
+  },
+  "homepage": "https://github.com/rcanoesbri/tdr_criptografia#readme"
+}
