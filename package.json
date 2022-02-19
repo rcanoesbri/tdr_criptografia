@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rcanoesbri/tdr_criptografia/issues"
   },
-  "homepage": "https://github.com/rcanoesbri/tdr_criptografia#readme"
+  "homepage": "https://github.com/rcanoesbri/tdr_criptografia#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0"
+  }
 }
