@@ -60,6 +60,8 @@ function encriptar(){
   }
   console.log(ciphernum);
   console.log(ciphertext);
+  document.getElementById('clauprocessada1').innerText = ciphersanitized;
+  document.getElementById('textprocessat1').innerText = textsanitized;
   document.getElementById('textoencriptado').innerText = ciphertext.join('');
 }
 

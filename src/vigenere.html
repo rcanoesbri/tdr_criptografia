@@ -3,15 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title>Cryptography</title>
+        <link rel="stylesheet" type="text/css" href="vigenere.css">
     </head>
 
     <body>
-        <label for="fname">Cipher:</label>
+        <h1>Vigènere Cipher</h1>
+        <label id="clau"> Clau: </label>
         <input type="text" id="cipher" name="cipher"><br><br>
-        <label for="lname">Plain Text:</label>
+        <label id="text"> Text a encriptar: </label>
         <input type="text" id="plaintext" name="plaintext"><br><br>
-        <input id="boton" type="button" value="Encriptar"/>
-        <p id="textoencriptado" type="text"></p>
+        <input id="boton" type="button" value="Encriptar"/><br><br>
+        <label id="clauprocessada"> Clau processada: </label>
+        <label id="clauprocessada1" type="text"></label><br><br>
+        <label id="textprocessat"> Text processat: </label>
+        <label id="textprocessat1" type="text"></label><br><br>
+        <label id="textencriptat"> Text encriptat: </label>
+        <label id="textoencriptado" type="text"></label>
         <script src="vigenere.js"></script>
     </body>
 </html>
