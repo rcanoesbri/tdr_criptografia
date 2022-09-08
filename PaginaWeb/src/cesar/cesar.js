@@ -105,9 +105,18 @@ function desencriptar(){
   document.getElementById('textoencriptado').innerText = ciphertext.join('');
 }
 
-document.getElementById("home").onclick = function () {
+document.getElementById("vigenere").onclick = function () {
+  location.href = "file:///C:/Users/Ra%C3%BAlCanoEsbr%C3%AD/Desktop/tdr_criptografia/PaginaWeb/src/vigenere/vigenere.html";
+}
+
+document.getElementById("cesar").onclick = function () {
+  location.href = "file:///C:/Users/Ra%C3%BAlCanoEsbr%C3%AD/Desktop/tdr_criptografia/PaginaWeb/src/cesar/cesar.html";
+}
+
+document.getElementById("teoria").onclick = function () {
   location.href = "file:///C:/Users/Ra%C3%BAlCanoEsbr%C3%AD/Desktop/tdr_criptografia/PaginaWeb/web.html";
 }
+
 
 window.onload = function() {
   const boton = document.getElementById('boton');

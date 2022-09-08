@@ -1,3 +1,43 @@
+* {box-sizing: border-box;}
+.wrapper {
+  max-width: 90%;
+  margin: 1%;  
+  margin-left: 5%;
+}
+
+body{
+  background-color: white;
+}
+
+#titol{
+  margin-top: 25px;
+  margin-left: 30%;
+  font-size: 3em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.wrapper > div {
+  border-radius: 5px;
+  padding: 0.6em;
+  border: 2px;
+  border: solid;  
+  border-color: yellow;
+  text-align: center;
+}
+
+/*Grid*/
+
+.canvas {
+  grid-column: 4;
+  grid-row: 4;
+}
+
 h1 {
   color: #000000;
   font-size: 3em;
@@ -14,7 +54,7 @@ label {
   padding: 5px;
 }
 
-body {
+#body {
   border: 7px solid silver;
   margin-left: 345px;
   max-width: 575px;
