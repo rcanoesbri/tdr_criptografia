@@ -44,3 +44,13 @@ input {
   padding: 5px;
 }
 
+#home{
+  margin-top: 15px;
+  margin-left: 40%;
+  border: 4px solid blue;
+  font-size: 1.2em;
+  height: 37px;
+  padding: 5px;
+  width: 150px;
+}
+
