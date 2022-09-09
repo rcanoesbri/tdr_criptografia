@@ -2,16 +2,41 @@
 .wrapper {
   max-width: 90%;
   margin: 1%;  
-  margin-left: 5%;
+  margin-left: 65px;
 }
 
 body{
   background-color: white;
 }
 
+h2{
+  margin-left: 145px;
+  color: darkblue;
+  font-size: 2em;
+}
+
+h3{
+  margin-left: 185px;
+  color: black;
+  font-size: 1.5em;
+}
+
+h4{
+  margin-left: 205px;
+  color: black;
+  font-size: 1.2em;
+}
+
+h5{
+  margin-left: 215px;
+  color: black;
+  font-size: 1em;
+}
+
 #titol{
   margin-top: 25px;
   margin-left: 30%;
+  margin-bottom: 70px;
   font-size: 3em;
 }
 
