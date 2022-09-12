@@ -29,31 +29,29 @@ document.getElementById("1").onclick = function () {
     }  
 }
 
-let historiaclick = false;
+let historiaclick = true;
+//const enigma = document.getElementById("maquinaenigma");
+            //enigma.scrollIntoView();
 
 document.getElementById("2").onclick = function () {
     if (historiaclick===false){
-        document.getElementById("historia").innerHTML +=
-            "<h3>2.1. Criptografia a l’Antiguitat</h3> <h3>2.2. Grècia i l’Imperi Romà</h3> <h3>2.3. Edat Mitjana</h3> <h3>2.4. Xifrat Polialfabètic</h3> <h4>2.4.1. Xifrat d’Alberti</h4> <h4>2.4.2. Xifrat de Vigènere</h4> <h3>2.5. Edat Moderna</h3> <h3>2.6. La segona guerra mundial</h3> <h4>2.6.1. Màquina Enigma</h4> <h5>2.6.1.1. Funcionament</h5> <h3>2.7. El boom dels 80 i 90</h3> <h3>2.8. En l’actualitat</h3>";
-        historiaclick = true;
+        document.getElementById("historia").style.display = 'none';
+            historiaclick = true;
     } else {
         historiaclick = false;
-        document.getElementById("historia").innerHTML =
-            "";
+        document.getElementById("historia").style.display = '';
     }  
 }
 
-let clasicaclick = false;
+let clasicaclick = true;
 
 document.getElementById("3").onclick = function () {
     if (clasicaclick===false){
-        document.getElementById("clasica").innerHTML +=
-            "<h3>3.1. Xifratge Monoalfabètic</h3><h3>3.2. Xifratge Polialfabètic</h3> <h3>3.3. Xifrat Cesar</h3> <h3>3.4. Xifrat vigènere</h3>  <h3>3.5. Xifrat Alberti</h3> <h3>3.6. Anàlisi de freqüència</h3>";
+        document.getElementById("clasica").style.display = 'none';
         clasicaclick = true;
     } else {
         clasicaclick = false;
-        document.getElementById("clasica").innerHTML =
-            "";
+        document.getElementById("clasica").style.display = '';
     }  
 }
 
@@ -83,4 +81,58 @@ document.getElementById("5").onclick = function () {
         document.getElementById("aplicacions").innerHTML =
             "";
     }  
+}
+
+
+document.getElementById('documentdownload').onclick = function(){
+    window.location='TdR.pdf';
+}
+
+document.getElementById('enigmabutton').onclick = function (){
+    document.getElementById("maquinaenigma").scrollIntoView();
+}
+
+document.getElementById('antiguitatbutton').onclick = function (){
+    document.getElementById("antiguitat").scrollIntoView();
+}
+
+document.getElementById('imperiromabutton').onclick = function (){
+    document.getElementById("greciairoma").scrollIntoView();
+}
+
+document.getElementById('edatmitjanabutton').onclick = function (){
+    document.getElementById("edatmitjana").scrollIntoView();
+}
+
+document.getElementById('polialfabeticbutton').onclick = function (){
+    document.getElementById("polialfabetic").scrollIntoView();
+}
+
+document.getElementById('albertibutton').onclick = function (){
+    document.getElementById("alberti").scrollIntoView();
+}
+
+document.getElementById('xifratvigenerebutton').onclick = function (){
+    document.getElementById("vigenereteoria").scrollIntoView();
+}
+
+document.getElementById('edatmodernabutton').onclick = function (){
+    document.getElementById("edatmoderna").scrollIntoView();
+}
+
+document.getElementById('segonaguerramunialbutton').onclick = function (){
+    document.getElementById("segonaguerramundial").scrollIntoView();
+}
+
+document.getElementById('enigmabutton').onclick = function (){
+    document.getElementById("maquinaenigma").scrollIntoView();
+}
+
+document.getElementById('funcionamentbutton').onclick = function (){
+    document.getElementById("funcionamentenigma").scrollIntoView();
+}
+
+window.onload = function() {
+    document.getElementById("historia").style.display = 'none';
+    document.getElementById("clasica").style.display = 'none';
 }

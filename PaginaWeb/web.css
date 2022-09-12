@@ -37,6 +37,7 @@ p{
   margin-left: 10px;
   font-size: 1.1em;
   text-align: justify;
+  margin-right: 20px;
 }
 
 #titol{
@@ -72,11 +73,16 @@ p{
 }
 
 .index {
-  grid-column: 1/46;
+  grid-column: 1/43;
+  overflow-y: scroll;
+  max-height: 500px;
 }
 
 .apartatteoria  {
-  grid-column: 46/101;
+  grid-column: 43/101;
+  overflow-y: scroll;
+  max-height: 500px;
+  margin-left: 20px;
 }
 
 .titol1  {
@@ -89,14 +95,21 @@ p{
   margin-left: 15px;
   color: black;
   font-size: 1.3em;
-  margin-top: 30px;
+  margin-top: 45px;
 }
 
 .titol3{
   margin-left: 25px;
-  color: black;
+  color: rgb(82, 82, 82);
   font-size: 1.3em;
-  margin-top: 30px;
+  margin-top: 45px;
+}
+
+.titol4{
+  margin-left: 35px;
+  color: rgb(82, 82, 82);
+  font-size: 1.3em;
+  margin-top: 35px;
 }
 
 img.centered{
@@ -121,4 +134,15 @@ img.centered{
   text-align: center;
   width: 150px;
   margin: auto;
+}
+
+#documentdownload{
+  border-radius: 5px;
+  padding: 0.6em;
+  border: 2px;
+  border: solid;  
+  border-color: #080950;
+  text-align: center;
+  width: 150px;
+  margin-left: 165px;
 }
