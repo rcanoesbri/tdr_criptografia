@@ -10,6 +10,11 @@ document.getElementById("teoria").onclick = function () {
     location.href = "file:///C:/Users/Ra%C3%BAlCanoEsbr%C3%AD/Desktop/tdr_criptografia/PaginaWeb/web.html";
 }
 
+document.getElementById("vigenerebutton").onclick = function () {
+    location.href = "src/vigenere/vigenere.html";
+}
+
+
 let introclick = false;
 
 document.getElementById("1").onclick = function () {
