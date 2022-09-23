@@ -137,6 +137,7 @@ img.centered{
 }
 
 #documentdownload{
+  display: block;
   border-radius: 5px;
   padding: 0.6em;
   border: 2px;
