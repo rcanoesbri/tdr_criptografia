@@ -6,14 +6,13 @@ document.getElementById("cesar").onclick = function () {
     location.href = "src/cesar/cesar.html";
 }
 
+document.getElementById("asimetrica").onclick = function () {
+    location.href = "src/asimetric/prova-asimetric/1.html";
+}
+
 document.getElementById("teoria").onclick = function () {
     location.href = "file:///C:/Users/Ra%C3%BAlCanoEsbr%C3%AD/Desktop/tdr_criptografia/PaginaWeb/web.html";
 }
-
-document.getElementById("vigenerebutton").onclick = function () {
-    location.href = "src/vigenere/vigenere.html";
-}
-
 
 let introclick = false;
 
@@ -132,7 +131,21 @@ document.getElementById('funcionamentbutton').onclick = function (){
     document.getElementById("funcionamentenigma").scrollIntoView();
 }
 
+/*function load_home(){
+    console.log('hello there!');
+    $("#apartatteoria").load("src/TdR.html");
+
+}*/
+
+async function fetchHtmlAsText(url) {
+    console.log("hellothere!");
+    const response = await fetch("src/doc.html");
+    const contentDiv = document.getElementById("apartatteoria");
+    contentDiv.innerHTML = await fetchHtmlAsText("src/doc.html");
+}
+
 window.onload = function() {
     document.getElementById("historia").style.display = 'none';
     document.getElementById("clasica").style.display = 'none';
+    fetchHtmlAsText("src/doc.html");
 }

@@ -75,13 +75,13 @@ p{
 .index {
   grid-column: 1/43;
   overflow-y: scroll;
-  max-height: 500px;
+  max-height: 75vh;
 }
 
 .apartatteoria  {
   grid-column: 43/101;
   overflow-y: scroll;
-  max-height: 500px;
+  max-height: 75vh;
   margin-left: 20px;
 }
 
@@ -110,6 +110,10 @@ p{
   color: rgb(82, 82, 82);
   font-size: 1.3em;
   margin-top: 35px;
+}
+
+img{
+  max-width: 65ch;
 }
 
 img.centered{
