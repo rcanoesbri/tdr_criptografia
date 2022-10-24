@@ -53,7 +53,7 @@ function encriptar(){
 
   for (let i = 0; i < lengthplaintext; i++) {
     if (textsanitized.charCodeAt(i) >= 65 && textsanitized.charCodeAt(i) <= 90){
-      ciphernum[i] = textsanitized.charCodeAt(i) + ciphersanitized.charCodeAt(count % lengthcipher) -65 -65;
+      ciphernum[i] = textsanitized.charCodeAt(i) + ciphersanitized.charCodeAt() -65 -65;
       ciphertext[i] = getLetter(ciphernum[i]);
       count++;
     } else {
@@ -91,13 +91,14 @@ function desencriptar(){
 
   for (let i = 0; i < lengthplaintext; i++) {
     if (textsanitized.charCodeAt(i) >= 65 && textsanitized.charCodeAt(i) <= 90){
-      ciphernum[i] = textsanitized.charCodeAt(i) - ciphersanitized.charCodeAt(count % lengthcipher);
+      ciphernum[i] = textsanitized.charCodeAt(i) - ciphersanitized.charCodeAt();
       ciphertext[i] = getLetter(ciphernum[i]);
       count++;
     } else {
       ciphertext[i] = ' ';
     }
   }
+  
   console.log(ciphernum);
   console.log(ciphertext);
   document.getElementById('clauprocessada1').innerText = ciphersanitized;
