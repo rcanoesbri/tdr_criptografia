@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cryptography</title>
+        <link rel="stylesheet" type="text/css" href="cesar/cesar.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div type="button" class="six" id="paginaprincipal">Pagina Inicial</div>
+            <div type="button" class="one teoria" id="teoria">Teoria</div>
+            <div type="button" class="two cesar" id="cesar">Xifratge Cesar</div>
+            <div type="button" class="three vigenere" id="vigenere">Xifratge Vigénere</div>
+            <div type="button" class="four asimetrica" id="asimetrica">Encriptació Asimétrica</div>
+            <div type="button" class="five Score" id="musica">Encriptació Música</div>
+          </div>  
+        <div id="body">
+            <h1>Cesar Cipher</h1>
+            <label id="clau"> Clau: </label>
+            <input type="text" id="cipher" name="cipher"><br><br>
+            <label id="text"> Text a encriptar: </label>
+            <input type="text" id="plaintext" name="plaintext"><br><br>
+            <input id="boton" type="button" value="Encriptar"/><br><br>
+            <input id="boton2" type="button" value="Desncriptar"/><br><br>
+            <label id="clauprocessada"> Clau processada: </label>
+            <label id="clauprocessada1" type="text"></label><br><br>
+            <label id="textprocessat"> Text processat: </label>
+            <label id="textprocessat1" type="text"></label><br><br>
+            <label id="textencriptat"> Text encriptat: </label>
+            <label id="textoencriptado" type="text"></label>
+        <script src="cesar/cesar.js"></script>
+        </div>
+    </body>
+</html>
+

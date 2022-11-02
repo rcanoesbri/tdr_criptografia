@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RSA</title>
+        <link rel="stylesheet" type="text/css" href="asimetric/asimetric.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div type="button" class="six" id="paginaprincipal">Pagina Inicial</div>
+            <div type="button" class="one teoria" id="teoria">Teoria</div>
+            <div type="button" class="two cesar" id="cesar">Xifratge Cesar</div>
+            <div type="button" class="three vigenere" id="vigenere">Xifratge Vigénere</div>
+            <div type="button" class="four asimetrica" id="asimetrica">Encriptació Asimétrica</div>
+            <div type="button" class="five Score" id="musica">Encriptació Música</div>
+        </div> 
+        <h1>RSA</h1>
+        <label >Text: </label>
+        <input type="text" id="textaprocessar"><br>
+        <label id="textprocessat"></label><br>
+        <label id="boton">procesar</label><br>
+        <script src="procesat-text.js"></script>
+        <label > Clear Text: </label>
+        <input type="text" id="cleartext"><br>
+        <label > Text Encriptat: </label>
+        <input type="text" id="ciphertext"><br>
+        <label id="resultat"></label>
+        <div type="button" id="encriptar">Encriptar</div>
+        <div type="button" id="desencriptar">Desencriptar</div>
+        <div type="button" id="crearclaus">Crear Claus</div>
+        <h2>p:</h2>
+        <label id="p"></label>
+        <h2>q:</h2>
+        <label id="q"></label>
+        <h2>n:</h2>
+        <label id="n"></label>
+        <h2>z:</h2>
+        <label id="z"></label>
+        <h2>k:</h2>
+        <label id="k"></label>
+        <h2>j:</h2>
+        <label id="j"></label>
+        <script src="asimetric/asimetric.js"></script>
+    </body>
+</html>
