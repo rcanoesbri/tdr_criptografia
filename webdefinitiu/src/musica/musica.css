@@ -23,6 +23,7 @@
 
 body{
   background-color: white;
+  margin-bottom: 65px;
 }
 
 #titol{
@@ -31,3 +32,36 @@ body{
     margin-bottom: 30px;
     font-size: 3em;
   }
+
+p{
+    max-width: 86%;
+    margin-left: 7%;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.1em;
+}
+
+a{
+    max-width: 86%;
+    margin-left: 7%;
+}
+
+table{
+  margin-left: 20%;
+  margin-bottom: 25px;
+}
+
+iframe{
+  margin-left: 20%;
+  margin-bottom: 25px;
+}
+
+#peuimatgemusica{
+  margin-left: 20%;
+  margin-bottom: 25px;
+}
+
+li{
+  margin-left: 9%;
+  margin-bottom: 15px;
+}
