@@ -9,11 +9,11 @@
 
     <body class="nozoom" id="body">
         <div class="wrapper">
-          <div type="button" class="six" id="paginaprincipal">Pagina Inicial</div>
+          <div type="button" class="six" id="paginaprincipal">Pàgina Inicial</div>
           <div type="button" class="one teoria" id="teoria">Teoria</div>
-          <div type="button" class="two cesar" id="cesar">Xifratge Cesar</div>
+          <div type="button" class="two cesar" id="cesar">Xifratge Cèsar</div>
           <div type="button" class="three vigenere" id="vigenere">Xifratge Vigenère</div>
-          <div type="button" class="four asimetrica" id="asimetrica">Encriptació Asimétrica</div>
+          <div type="button" class="four asimetrica" id="asimetrica">Encriptació Asimètrica</div>
           <div type="button" class="five Score" id="musica">Encriptació Música</div>
         </div>  
 
@@ -51,7 +51,7 @@
                 <h3 id="simetricabutton">4.1. Clau simétrica</h3> 
                 <h4 id="DESbutton">4.1.1. Data Encryption Standard - DES</h4> 
                 <h4 id="xifratgefluxbutton">4.1.2. Xifratge de flux</h4> 
-                <h4 id="xifratgeblocbutton">4.2.3. Xifratge de bloc</h4>  
+                <h4 id="xifratgeblocbutton">4.1.3. Xifratge de bloc</h4>  
                 <h3 id="asimetricabutton">4.2. Clau asimétrica</h3> 
                 <h4 id="algorismesasimetricabutton">4.2.1. Principals Algorismes</h4>
                 <h5 id="RSAbutton">4.2.1.1. RSA</h4>
@@ -63,7 +63,7 @@
                 <h3 id="aplicacionsfirmaelectronicabutton">5.2. Firma electrónica</h3> 
                 <h3 id="aplicacionscertificatsdigitalsbutton">5.3. Certificats digitals</h3>
               </div>
-              <a href="TdR.pdf" target="_blank" id="documentdownload">Descarregar PDF</a>
+              <a href="TdR_Criptografia.pdf" target="_blank" id="documentdownload">Descarregar PDF</a>
           </div>
           <div class="apartatteoria" id="apartatteoria">
         <h1 id="intro">1. Introducció</h1>        
@@ -135,7 +135,7 @@
         <p>
 
         <img src="images/image3.png" width="" alt="alt_text" title="image_tooltip">
-
+        <em>Il·lustració: Exemple de llenguatge de xifratge antic</em>
         </p>
         <p>
         <em>Il·lustració 3:</em>
@@ -184,7 +184,7 @@
         Durant una guerra, és de vital importància que, en cas que l'enemic intercepti un missatge, li sigui impossible llegir el seu contingut. Per a aconseguir-ho, durant la Segona Guerra Mundial i gràcies a l'avanç de la tecnologia es van crear nous mètodes d'encriptació.
         </p>
         <p>
-        Com durant la Segona Guerra Mundial, els missatges es transmetien mitjançant l'ús de la ràdio, qualsevol persona amb un receptor i la freqüència adequada pot escoltar aquests missatges.
+        Com durant la Segona Guerra Mundial els missatges es transmetien mitjançant l'ús de la ràdio, qualsevol persona amb un receptor i la freqüència adequada pot escoltar aquests missatges.
         </p>
         <p>
         Per a evitar que els enemics interceptessin aquests missatges es van haver d'inventar nous mètodes d'encriptació. En l'antiguitat, l'encriptació es feia a mà, i avui en dia s'utilitzen ordinadors, però durant la Segona Guerra Mundial, abans de la invenció dels ordinadors, es van crear noves màquines per a facilitar la tasca d'encriptació i dificultar la desencriptació.
@@ -285,7 +285,7 @@
         <em>Il·lustració 8: Rotors de la màquina enigma</em>
         </p>
       
-        <p><strong>Orientacions del rotor:</strong> D – K –P</p>
+        <p><strong>c. Orientacions del rotor:</strong> D – K –P</p>
         <p>
         A cada rotor, hi ha un alfabet al llarg de la vora, de manera que l'operador pot establir una orientació determinada. Per a aquest exemple, l'operador giraria el rotor a la ranura 1 perquè es mostri D, giraria la segona ranura perquè es mostri K i giraria la tercera ranura perquè es mostri P.
         </p>
@@ -659,9 +659,7 @@
         </p>
         <ul><li><strong>Avantatges d'utilitzar ECB:</strong></li></ul>
         
-        És possible xifrar els diferents blocs de forma paral·lela, per tant, és una forma més ràpida de xifratge.
-        
-        Mètode senzill de xifrat de blocs.
+        <P>És possible xifrar els diferents blocs de forma paral·lela, per tant, és una forma més ràpida de xifratge. Mètode senzill de xifrat de blocs.</P>
         <ul><li><strong>Desavantatges d'utilitzar ECB:</strong></li></ul>
         <p>Propens a criptoanàlisi ja que hi ha una relació directa entre el text pla i text xifrat.</p>
         <br>
@@ -811,7 +809,7 @@
         </p>
         <p>1. David crea una clau pública i una privada.</p>
         <p>2. David comparteix la clau pública amb qui li vol enviar un missatge.</p>
-        <p>3. Ana redacta un missatge i encripta fent servir la clau privada.</p>
+        <p>3. Ana redacta un missatge i encripta fent servir la clau pública.</p>
         <p>4. David rep el missatge encriptat i el desencripta amb la seva clau privada. </p>
         <p>
         D’aquesta forma, qualsevol persona amb la clau pública li pot enviar un missatge a David, però només ell els pot llegir, ja que es necessita la clau privada que no ha compartit amb ningú. 

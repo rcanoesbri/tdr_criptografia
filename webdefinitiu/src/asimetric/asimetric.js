@@ -58,7 +58,7 @@ function isPrime(num) {
 function randomnumber(){
   let prime = false;
   while (prime === false){
-    let num = Math.floor(Math.random() * 1000);
+    let num = Math.floor(Math.random() * 1500);
     prime = isPrime(num);
     if (prime === true){
       console.log('works');

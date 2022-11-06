@@ -58,7 +58,7 @@ function isPrime(num) {
 function randomnumber(){
   let prime = false;
   while (prime === false){
-    let num = Math.floor(Math.random() * 10000 + 1500);
+    let num = Math.floor(Math.random() * 20000 + 1500);
     prime = isPrime(num);
     if (prime === true){
       console.log('works');
@@ -172,10 +172,10 @@ function encriptar(){
   document.getElementById('resultat').innerText = '...';
   let text = document.getElementById('cleartext').value;
   let cleartext = processtext(text);
-  cleartext = cleartext.join('');
+  cleartext = BigInt(cleartext.join(''));
   console.log(cleartext);
   console.log(claus);
-  ciphertext = BigInt(((BigInt(cleartext)**claus[4]) % claus[2]));
+  ciphertext = BigInt(((cleartext)**claus[4]) % claus[2]);
   console.log(ciphertext);
   document.getElementById('resultat').innerText = ciphertext;
 } 
