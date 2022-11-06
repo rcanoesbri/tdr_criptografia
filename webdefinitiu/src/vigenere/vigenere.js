@@ -15,7 +15,7 @@ document.getElementById("teoria").onclick = function () {
 }
 
 document.getElementById("paginaprincipal").onclick = function () {
-    location.href = "paginainicial.html";
+    location.href = "index.html";
 }
 
 document.getElementById("musica").onclick = function () {

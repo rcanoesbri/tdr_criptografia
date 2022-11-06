@@ -12,7 +12,7 @@
           <div type="button" class="six" id="paginaprincipal">Pagina Inicial</div>
           <div type="button" class="one teoria" id="teoria">Teoria</div>
           <div type="button" class="two cesar" id="cesar">Xifratge Cesar</div>
-          <div type="button" class="three vigenere" id="vigenere">Xifratge Vigénere</div>
+          <div type="button" class="three vigenere" id="vigenere">Xifratge Vigenère</div>
           <div type="button" class="four asimetrica" id="asimetrica">Encriptació Asimétrica</div>
           <div type="button" class="five Score" id="musica">Encriptació Música</div>
         </div>  
@@ -22,7 +22,6 @@
         <div class="wrapper2">
           <div class="index">
               <h2 type="button" id="1">1. Introducció a la Criptografia</h2>
-              <div id="intro"></div>
               <h2 type="button" id="2">2. Història de la Criptografia</h2>
               <div id="historia">
                 <h3 id="antiguitatbutton">2.1. Criptografia a l’Antiguitat</h3>
@@ -839,7 +838,39 @@
         <ul>El valor triat més habitualment per a e és 2<sup>16</sup> + 1 = 65537. El valor més petit (i més ràpid) possible per a e és 3</ul>
         <ul>Ex: e = 3</ul></p>
         <p>5. Trobar <strong>d </strong>tal que (e * d) mod f(n) = 1
-        <ul>EX: (3 * d) mod 3120 = 1</ul></p><br>        
+        <ul>EX: (3 * d) mod 3120 = 1</ul></p><br>      
+        <p>
+          Un cop generades les claus, <strong>N </strong>i <strong>E</strong> formen la clau pública i es fan públiques per a que qualsevol pugui utilitzar-les per a encriptar un text que només el creador de les claus podrà desencriptar, utilitzant les claus privades, que son <strong>N </strong>i <strong>D</strong>.
+          </p>
+          <ul>
+          
+          <li><strong>Per a encriptar:</strong> 
+          <ul>
+           
+          <li>c(m) = <strong>m<sup>e </sup></strong>mod <strong>n</strong>
+           
+          <li>Per a encriptar el missatge <strong>m</strong> hem d’elevar-lo a la clau <strong>e</strong> i fer el mòdul de la divisió d’aquesta potencia entre <strong>n.</strong>
+           
+          <li>c(m) és el missatge encriptat
+           
+          <li>m és el missatge que volem encriptar.
+          </li> 
+          </ul>
+          
+          <li><strong>Per desencriptar:</strong> 
+          <ul>
+           
+          <li>m(c) = <strong>m<sup>d </sup></strong>mod <strong>n</strong>
+           
+          <li>Per a desencriptar el missatge <strong>c</strong> hem d’elevar-lo a la clau <strong>d</strong> i fer el mòdul de la divisió d’aquesta potencia entre <strong>n.</strong>
+           
+          <li>m(c) és el missatge desencriptat 
+          <li>c és el missatge que volem desencriptar.
+          </li> 
+          </ul>
+          </li> 
+          </ul>   
+          <ol>
         <h4>4.2.1.2. ECDSA</h4>
         <p>
         L'algoritme de signatura digital de corba el·líptica (ECDSA) és un algoritme de signatura digital (DSA) que utilitza claus derivades de la criptografia de corba el·líptica. És una equació particularment eficient basada en criptografia de clau pública.

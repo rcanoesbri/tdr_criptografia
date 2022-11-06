@@ -12,6 +12,7 @@
     border: solid;  
     border-color: #080950;
     text-align: center;
+    cursor: pointer;
   }
 
   * {box-sizing: border-box;}

@@ -58,7 +58,7 @@ function isPrime(num) {
 function randomnumber(){
   let prime = false;
   while (prime === false){
-    let num = Math.floor(Math.random() * 1000);
+    let num = Math.floor(Math.random() * 10000 + 1500);
     prime = isPrime(num);
     if (prime === true){
       console.log('works');
@@ -169,39 +169,43 @@ function calcularclaus(){
 }
 
 function encriptar(){
+  document.getElementById('resultat').innerText = '...';
   let text = document.getElementById('cleartext').value;
   let cleartext = processtext(text);
-  let length = cleartext.length;
-  let ciphertext = [];
-  for (i=0; i<length; i++){
-    console.log(claus);
-    ciphertext[i] = BigInt(((BigInt(cleartext[i])**claus[4]) % claus[2]));
-    console.log(ciphertext);
-    document.getElementById('resultat').innerText = ciphertext;
-  }
+  cleartext = cleartext.join('');
+  console.log(cleartext);
+  console.log(claus);
+  ciphertext = BigInt(((BigInt(cleartext)**claus[4]) % claus[2]));
   console.log(ciphertext);
-  let textencriptat = ciphertext.join('');
   document.getElementById('resultat').innerText = ciphertext;
-  return ciphertext;
 } 
 
 function desencriptar(){
   textencriptat = document.getElementById('ciphertext').value;
   console.log(textencriptat);
-  let ciphertext = textencriptat.split(',');
   console.log(ciphertext);
-  let length = ciphertext.length;
+  console.log(claus);
+  let cleartext = BigInt(((BigInt(ciphertext)**claus[5]) % claus[2]));
+  console.log(cleartext);
+  cleartext = Number(cleartext) + '';
+  console.log(cleartext);
+  let tamany = (cleartext.length)/2;
+  cleartext = cleartext.split('');
+  let clearnums = [];
+  let count = 0;
+  for (i=0; i<tamany; i++){
+    clearnums[i] = cleartext[count] + '' + cleartext[count+1];
+    count = count + 2;
+  }
+  console.log(clearnums);
+  let length = clearnums.length;
   let result = [];
   for (i=0; i<length; i++){
-    console.log(claus);
-    cleartext[i] = BigInt(((BigInt(ciphertext[i])**claus[5]) % claus[2]));
-    console.log(cleartext);
-    result[i] = getLetter(Number(cleartext[i]));
-    console.log(result);
+    result[i] = getLetter(clearnums[i]);
   }
-  console.log(cleartext);
-  let textfinal = result.join('');
   console.log(result);
+  let textfinal = result.join('');
+  console.log(textfinal);
   document.getElementById('resultat2').innerText = textfinal;
 }
 
@@ -210,11 +214,12 @@ function funciona (){
 }
 
 function getLetter(num){
-  return String.fromCharCode(num);
+  let letter = String.fromCharCode(num);
+  return letter;
 }
 
 function getNum(str){
-let text = str
+let text = str;
 let length = text.length;
 let textnum = [];
 for (i=0; i<length; i++){
@@ -254,6 +259,12 @@ function processtext(str){
   return textnum;
 }
 
+function botondesencriptar(){
+  document.getElementById('resultat2').innerText = '...';
+  setTimeout(desencriptar, 10);
+}
+
+
 window.onload = function(){
     const boton1 = document.getElementById('crearclaus');
     boton1.addEventListener('click', calcularclaus);   
@@ -261,6 +272,5 @@ window.onload = function(){
     const boton2 = document.getElementById('encriptar');
     boton2.addEventListener('click', encriptar);
     const boton3 = document.getElementById('desencriptar');
-    boton3.addEventListener('click', desencriptar);
-    const boton4 = document.getElementById('boton');
+    boton3.addEventListener('click', botondesencriptar);
 }

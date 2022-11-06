@@ -7,7 +7,7 @@ Els autors d'aquest treball som: Raúl Cano Esbrí, Pau Villanúa Hidalgo i Roc 
 
 En aquesta pàgina web es pot trobar la part teòrica del treball i la part pràctica, dividida en els diferents apartats.
 
-Vam escollir aquest treball perquè ens va semblar un tema molt interessant del qual sabiem realment poc, donat això, vam decidir dividir el treball en dues parts, una part teòrica en la que investigavem sobre la història de la encriptació i els mètodes d’encriptació actuals, i una part pràctica en la que utilitzem aquests coneixements adquirits durant la part teòrica i creavem un programa per a encriptar textos mitjançant els diferents mètodes de xifratge, tant clàssics com moderns.
+Vam escollir aquest treball perquè ens va semblar un tema molt interessant del qual sabiem realment poc, donat això, vam decidir dividir el treball en dues parts, una part teòrica en la que investigavem sobre la història de la encriptació i els mètodes d’encriptació actuals, i una part pràctica en la que utilitzem aquests coneixements adquirits durant la part teòrica i hem un programa per a encriptar textos mitjançant els diferents mètodes de xifratge, tant clàssics com moderns.
 
 El nostre objectiu del treball era conèixer els orígens de la criptografia i els primers mètodes de xifratge, com el xifrat cèsar o el xifrat vigenère i descobrir com han anat evolucionant fins arribar a mètodes de xifratge més moderns, com el xifratge de blocs o l’encriptació de clau pública.
 

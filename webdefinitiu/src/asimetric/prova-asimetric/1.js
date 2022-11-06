@@ -1,27 +1,22 @@
 document.getElementById("vigenere").onclick = function () {
-    location.href = "vigenere.html";
+  location.href = "PaginaWeb/src/vigenere/vigenere.html";
 }
 
 document.getElementById("cesar").onclick = function () {
-    location.href = "cesar.html";
+  location.href = "PaginaWeb/src/cesar/cesar.html";
 }
 
 document.getElementById("asimetrica").onclick = function () {
-    location.href = "asimetric.html";
+  location.href = "PaginaWeb/src/asimetric/prova-asimetric/1.html";
 }
 
 document.getElementById("teoria").onclick = function () {
-    location.href = "teoria.html";
+  location.href = "PaginaWeb/webcopy.html";
 }
 
 document.getElementById("paginaprincipal").onclick = function () {
-    location.href = "index.html";
+  location.href = "PaginaWeb/introduccio.html";
 }
-
-document.getElementById("musica").onclick = function () {
-    location.href = "musica.html";
-}
-
 
 let p;
 let q;
@@ -31,7 +26,58 @@ let j;
 
 let claus = [];
 
+let cleartext = [];
 let textfinal = [];
+let ciphertext = [];
+
+function getLetter(str){
+  let text = str;
+  let length = text.length;
+  for (i=0; i<length; i++){
+    let number = Number(text[i]);
+    textfinal[i] = String.fromCharCode(number);
+  }
+  cleartext = textfinal;
+}
+
+function getNum(str){
+  let text = str
+  let length = text.length;
+  for (i=0; i<length; i++){
+    cleartext[i] = BigInt(text.charCodeAt(i));
+  }
+  console.log(cleartext);
+}
+
+function sanitizecipher(str){
+  const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
+  const to = 'AAAAEEEEIIIIOOOOUUUUNC';
+  for (let i=0, l=from.length; i<l; i++) {
+    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
+  str.replace(/[^a-z]/g, '');
+  return str;
+}
+
+function sanitizetext(str){
+const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
+const to = 'AAAAEEEEIIIIOOOOUUUUNC';
+for (let i=0, l=from.length; i<l; i++) {
+  str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+}
+str.replace(/[^a-z0-9]/g, '');
+return str;
+}  
+
+function processtext(){
+  let text = document.getElementById('textaprocessar').value;
+  text = text.toUpperCase();
+  text = sanitizetext(text);
+  console.log(text);
+  texto = getNum(text);
+  document.getElementById('textprocessat').innerText = cleartext;
+  console.log(cleartext);
+}
 
 function isPrime(num) {
     if (num <= 3) {
@@ -169,89 +215,35 @@ function calcularclaus(){
 }
 
 function encriptar(){
-  let text = document.getElementById('cleartext').value;
-  let cleartext = processtext(text);
   let length = cleartext.length;
-  let ciphertext = [];
   for (i=0; i<length; i++){
     console.log(claus);
-    ciphertext[i] = BigInt(((BigInt(cleartext[i])**claus[4]) % claus[2]));
+    ciphertext[i] = BigInt(((cleartext[i]**claus[4]) % claus[2]));
     console.log(ciphertext);
     document.getElementById('resultat').innerText = ciphertext;
   }
   console.log(ciphertext);
   let textencriptat = ciphertext.join('');
-  document.getElementById('resultat').innerText = ciphertext;
+  document.getElementById('resultat').innerText = textencriptat;
   return ciphertext;
 } 
 
 function desencriptar(){
-  textencriptat = document.getElementById('ciphertext').value;
-  console.log(textencriptat);
-  let ciphertext = textencriptat.split(',');
-  console.log(ciphertext);
   let length = ciphertext.length;
-  let result = [];
   for (i=0; i<length; i++){
     console.log(claus);
-    cleartext[i] = BigInt(((BigInt(ciphertext[i])**claus[5]) % claus[2]));
+    cleartext[i] = BigInt(((ciphertext[i]**claus[5]) % claus[2]));
     console.log(cleartext);
-    result[i] = getLetter(Number(cleartext[i]));
-    console.log(result);
+    document.getElementById('resultat').innerText = cleartext;
   }
   console.log(cleartext);
-  let textfinal = result.join('');
-  console.log(result);
-  document.getElementById('resultat2').innerText = textfinal;
+  let result = getLetter(cleartext);
+  let textfinal = cleartext.join('');
+  document.getElementById('resultat').innerText = textfinal;
 }
 
 function funciona (){
   console.log('funciona');
-}
-
-function getLetter(num){
-  return String.fromCharCode(num);
-}
-
-function getNum(str){
-let text = str
-let length = text.length;
-let textnum = [];
-for (i=0; i<length; i++){
-  textnum[i] = text.charCodeAt(i);
-}
-console.log(textnum);
-return textnum;
-}
-
-function sanitizecipher(str){
-const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
-const to = 'AAAAEEEEIIIIOOOOUUUUNC';
-for (let i=0, l=from.length; i<l; i++) {
-  str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
-}
-str.replace(/[^a-z]/g, '');
-return str;
-}
-
-function sanitizetext(str){
-const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
-const to = 'AAAAEEEEIIIIOOOOUUUUNC';
-for (let i=0, l=from.length; i<l; i++) {
-  str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
-}
-str.replace(/[^a-z0-9]/g, '');
-return str;
-}  
-
-function processtext(str){
-  let text = str;
-  text = text.toUpperCase();
-  text = sanitizetext(text);
-  console.log(text);
-  let textnum = getNum(text);
-  document.getElementById('textprocessat').innerText = textnum;
-  return textnum;
 }
 
 window.onload = function(){
@@ -263,4 +255,5 @@ window.onload = function(){
     const boton3 = document.getElementById('desencriptar');
     boton3.addEventListener('click', desencriptar);
     const boton4 = document.getElementById('boton');
+    boton4.addEventListener('click', processtext); 
 }
