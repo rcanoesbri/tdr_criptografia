@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="chat2/chat2.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div type="button" class="six" id="paginaprincipal">Pàgina Inicial</div>
+        <div type="button" class="one teoria" id="teoria">Teoria</div>
+        <div type="button" class="two cesar" id="cesar">Xifratge Cèsar</div>
+        <div type="button" class="three vigenere" id="vigenere">Xifratge Vigenère</div>
+        <div type="button" class="four asimetrica" id="asimetrica">Encriptació Asimètrica</div>
+        <div type="button" class="five Score" id="musica">Encriptació Música</div>
+    </div> 
+    <div class="wrapper2">
+        <div class="missatges" id="missatges">
+            <ul id="messages"></ul>
+            <form id="form" action="">
+            <input id="input" autocomplete="off" /><button>Send</button>
+            </form>
+            <script src="/socket.io/socket.io.js"></script>
+            <script>
+                var socket = io();
+
+
+                var messages = document.getElementById('messages');
+                var form = document.getElementById('form');
+                var input = document.getElementById('input');
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (input.value) {
+                    socket.emit('chat message', input.value);
+                    input.value = '';
+                    }
+                });
+
+                socket.on('chat message', function(msg) {
+                    var item = document.createElement('li');
+                    item.textContent = msg;
+                    messages.appendChild(item);
+                    window.scrollTo(0, document.body.scrollHeight);
+                });
+            </script>
+        </div>
+        <div class="encriptacio" id="encriptacio" style="margin-left: 20px;">
+            <button style="width: 150px; margin-left: 125px;" class="button" id="encriptacioasimetrica">Asimètric</button> 
+            <button style="width: 150px;  margin-left: 15px;" class="button" id="encriptaciovigenere">Vigenère</button>
+            <div id="asimetric">
+                <h3>Creació de les claus:</h2>        
+                    <div class="button" id="crearclaus">Crear Claus</div>
+                    <p><strong>p:</strong><label id="p"></label> <strong>q:</strong><label id="q"></label></p>                         
+                    <p><strong>n:</strong><label id="n"></label>
+                    <span style="display: none;"><strong>f(n):</strong><label id="z"></label></span>
+                    <strong>e:</strong><label id="k"></label>
+                    <strong>d:</strong><label id="j"></label></p>
+                    <p>Clau Pública: <span><strong>n:</strong><label id="n2"></label></span> <span>//</span> <span><strong>e:</strong><label id="k2"></label></span></p>
+                    <p>Clau Privada: <span><strong>n:</strong><label id="n3"></label></span> <span>//</span> <span><strong>d:</strong><label id="j2"></label></span></p>
+                    <label > Clear Text: </label>
+                    <input type="text" id="cleartext"><br>
+                    <label><strong>n: </strong><label><input id="inputn"></input> <span>//</span> <label><strong>e: </strong></label><input id="inputk"></input>
+                    <p></p>
+                    <div class="button" type="button" id="encriptar">Encriptar</div>
+                    <p></p>
+                    <label > Text Encriptat: </label>
+                    <input type="text" id="ciphertext"><br>
+                    <label><strong>n: </strong><label><input id="inputn2"></input> <span>//</span> <label><strong>d: </strong></label><input id="inputj"></input>
+                    <p></p>
+                    <div class="button" type="button" id="desencriptar">Desencriptar</div>
+                    <label id="resultat"></label>
+            </div>
+            <div id="vigenere2">
+                <h1>Xifratge Vigenère</h1>
+                <label id="clau"> Clau: </label>
+                <input type="text" id="cipher" name="cipher"><br><br>
+                <label id="text"> Text a encriptar: </label>
+                <input type="text" id="plaintext" name="plaintext"><br><br>
+                <input id="boton" type="button" value="Encriptar"/><br><br>
+                <input id="boton2" type="button" value="Desencriptar"/><br><br>
+                <label id="textencriptat"> Resultat: </label>
+                <label id="textoencriptado" type="text"></label>
+            </div>
+        </div>
+    </div>
+    <script src="chat2/chat2.js"></script>
+  </body>
+</html>

@@ -109,7 +109,6 @@ function randomnumber(){
     if (prime === true){
       console.log('works');
       return num;
-      break;
     }
   }
 }
