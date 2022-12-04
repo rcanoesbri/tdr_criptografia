@@ -1,0 +1,898 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="dist/presentacio.css">
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="portada">
+					<h1>CRIPTOGRAFIA</h1>
+					<h3 id="noms">Raúl Cano, Roc Rodríguez, Pau Villanúa</h2>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+					</aside>
+				</section>
+				<section>
+					<h2>Índex:</h2>
+					<ol class="mainindex">
+						<li>Historia</li>
+						<ol>
+							<li>Criptografia Clàssica</li>
+						</ol>
+						<li>Xifratges per substitució</li>
+						<ol>
+							<li>Xifratge Monoalfabètic</li>
+							<li>Anàlisi de Freqüència</li>
+							<li>Xifratge Polialfabètic</li>
+						</ol>
+						<li>Segona Guerra Mundial</li>
+						<ol>
+							<li>Màquina Enigma</li>
+						</ol>
+						<li>Criptografia Moderna</li>
+						<ol>
+							<li>Criptografia Simètrica - DES</li>
+							<li>Criptografia Asimètrica - RSA</li>
+						</ol>
+						<li>Aplicacions</li>
+						<li>Part Pràctica</li>
+					</ol>
+				</section>
+				<section id="historia">
+					<h2>Història de la criptografia</h2>
+				</section>
+				<section>
+					<section data-auto-animate id="classica"  data-transition-speed="slow">
+						<h2 id="criptografiaclassica">Criptografia clàssica</h2>
+						<div class="wrapper" id="periodes">
+							<div data-id="box">
+								<h3  data-auto-animate style="font-size:0.5em; margin-top:auto; margin-left: 10px; color: black;" data-id="lantiguitat">L'Antiguitat</h3>
+								<img src="dist/images/image1.png">
+							</div>
+							<div>
+								<h4 data-auto-animate style="font-size:0.5em; margin-top:auto; margin-left: 10px; color: black;">Grècia</h4>
+								<img src="dist/images/image2.png">
+							</div>
+							<div>
+								<h4 data-auto-animate style="font-size:0.5em; margin-top:auto; margin-left: 10px; color: black;">Imperi Romà</h4>
+								<img src="dist/images/image12.png">
+							</div>
+							<div>
+								<h4 data-auto-animate style="font-size:0.5em; margin-top:auto; margin-left: 10px; color: black;">Edat Mitjana</h4>
+								<img src="dist/images/image3.png">
+							</div>
+						</div>
+					</section>
+					<section data-auto-animate id="antiguitat" data-background-color= #eee>
+						<div data-id="box" id="box">
+						<h3 data-auto-animate data-id="lantiguitat" style="margin-left:0px;">L'Antiguitat</h3>
+						<ul>
+							<li>Reemplaçament de símbols a antigues escriptures egípcies i mesopotàmiques.</li>
+							<li>Inscripció de Knhumhotep II => Increment de l'atractiu linguístic.</li>
+							<li>Primer cas de criptografia per ocultar informació => Escriba mesopotàmic de fa 3.500 anys.</li>
+						</ul>
+						<img class="r-stretch" src="dist/images/image1.png">
+						</div>
+					</section>
+					<section id="grecia" data-background-color= #eee>
+						<h3>Criptografia a Grècia i Roma</h2>
+						<ul>
+							<li style="margin-top: 20px; font-size: 1em;">Protecció d'importants informacions militars</li><br>
+						</ul>
+						<br clear="both">
+						<img style="height: 200px;" src="dist/images/image2.png">
+						<img style="height: 300px; margin-left: 50px;" src="https://media.istockphoto.com/id/1035493536/es/vector/antigua-roma-busto-de-julio-c%C3%A9sar.jpg?s=612x612&w=0&k=20&c=5LRycFzh154f5KHQZI9gE12ThCx4AUqgSZ-09l4bbg0=">
+					</section>
+					<section id="edatmitjana" data-background-color= #eee>
+						<h3>Criptografia a l'Edat Mitjana</h2>
+						<img src="dist/images/edatmitjana1.PNG">
+						<img src="dist/images/edatmitjana2.PNG">
+					</section>
+					<section data-background-color= #eee>
+						<h3>Criptografia a l'Edat Moderna</h3>
+					</section>
+				</section>
+				<section>
+					<section id="seguretat">
+						<h2 id="seguretatclassica">Xifratge per substitució</h2>
+					</section>
+					<section data-auto-animate id="monoalfabetic" data-background-color= #eee>
+						<h3 style="margin-bottom: 65px;">Xifratge Monoalfabètic</h3>
+						<ul>
+							<li>Una única clau per a tot el text</li>
+							<li>Xifratge Cèsar</li>
+						</ul>
+						<img style="height: 45vh; border: 5px solid black;" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Caesar3.svg">
+					</section>
+					<section data-auto-animate id="monoalfabetic" data-background-color= #eee>
+						<h3 style="margin-bottom: 45px;">Xifratge Monoalfabètic</h3>
+						<ul style="margin-bottom: 45px;">
+							<li>Una unica clau per a tot el text</li>
+							<li>Xifratge Cèsar</li>
+							<li>Clau D -- Es desplacen les lletres 3 posicions</li>
+						</ul>
+						<table class="cryptotable">
+							<tr>
+								<td>C</td>
+								<td>R</td>
+								<td>I</td>
+								<td>P</td>
+								<td>T</td>
+								<td>O</td>
+								<td>G</td>
+								<td>R</td>
+								<td>A</td>
+								<td>F</td>
+								<td>I</td>
+								<td>A</td>
+							</tr>
+							<tr class="fragment">
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+								<td>+3</td>
+							</tr>
+							<tr class="fragment">
+								<td>F</td>
+								<td>U</td>
+								<td>L</td>
+								<td>S</td>
+								<td>W</td>
+								<td>R</td>
+								<td>J</td>
+								<td>U</td>
+								<td>D</td>
+								<td>I</td>
+								<td>L</td>
+								<td>D</td>
+							</tr>
+						</table>
+					</section>
+					<section data-auto-animate data-auto-animate-restart id="analisifrequencia" data-background-color= #eee>
+						<h3>Anàlisi de freqüència</h3>
+						<img src="dist/images/image14.png" class="r-stretch">
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Anàlisi de freqüència</h3>
+						<p data-id="quijote" style="font-family:'Courier New', Courier, monospace; font-size: 0.6em; text-align:justify;">TQOTME BGQE QEFME BDQHQZOUAZQE ZA CGUEA MSGMDPMD YME FUQYBA M BAZQD QZ QRQOFA EG BQZEMYUQZFA MBDQFMZPAXQ M QXXA XM RMXFM CGQ QX BQZEMNM CGQ TMOUM QZ QX YGZPA EG FMDPMZLM EQSGZ QDMZ XAE MSDMHUAE CGQ BQZEMNM PQETMOQD FGQDFAE CGQ QZPQDQLMD EUZDMLAZQE CGQ QZYQZPMD K MNGEAE CGQ YQVADMD K PQGPME CGQ EMFUERMOQD K MEU EUZ PMD BMDFQ M BQDEAZM MXSGZM PQ EG UZFQZOUAZ K EUZ CGQ ZMPUQ XQ HUQEQ GZM YMZMZM MZFQE PQX PUM CGQ QDM GZA PQ XAE OMXGDAEAE PQX YQE PQ VGXUA EQ MDYA PQ FAPME EGE MDYME EGNUA EANDQ DAOUZMZFQ BGQEFM EG YMX OAYBGQEFM OQXMPM QYNDMLA EG MPMDSM FAYA EG XMZLM K BAD XM BGQDFM RMXEM PQ GZ OADDMX EMXUA MX OMYBA OAZ SDMZPUEUYA OAZFQZFA K MXNADALA PQ HQD OAZ OGMZFM RMOUXUPMP TMNUM PMPA BDUZOUBUA M EG NGQZ PQEQA</p>
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Anàlisi de freqüència</h3>
+						<p data-id="quijote" style="font-family:'Courier New', Courier, monospace; font-size: 0.6em; text-align:justify;">TQOTME BGQE QEFME BDQHQZOUAZQE ZA CGUEA MSGMDPMD YME FUQYBA M BAZQD QZ QRQOFA EG BQZEMYUQZFA MBDQFMZPAXQ M QXXA XM RMXFM CGQ QX BQZEMNM CGQ TMOUM QZ QX YGZPA EG FMDPMZLM EQSGZ QDMZ XAE MSDMHUAE CGQ BQZEMNM PQETMOQD FGQDFAE CGQ QZPQDQLMD EUZDMLAZQE CGQ QZYQZPMD K MNGEAE CGQ YQVADMD K PQGPME CGQ EMFUERMOQD K MEU EUZ PMD BMDFQ M BQDEAZM MXSGZM PQ EG UZFQZOUAZ K EUZ CGQ ZMPUQ XQ HUQEQ GZM YMZMZM MZFQE PQX PUM CGQ QDM GZA PQ XAE OMXGDAEAE PQX YQE PQ VGXUA EQ MDYA PQ FAPME EGE MDYME EGNUA EANDQ DAOUZMZFQ BGQEFM EG YMX OAYBGQEFM OQXMPM QYNDMLA EG MPMDSM FAYA EG XMZLM K BAD XM BGQDFM RMXEM PQ GZ OADDMX EMXUA MX OMYBA OAZ SDMZPUEUYA OAZFQZFA K MXNADALA PQ HQD OAZ OGMZFM RMOUXUPMP TMNUM PMPA BDUZOUBUA M EG NGQZ PQEQA</p>
+						<table data-id="table" style="font-size: 0.7em;" class="cryptotable">
+							<tr>
+								<td>A</td>
+								<td>B</td>
+								<td>C</td>
+								<td>D</td>
+								<td>E</td>
+								<td>F</td>
+								<td>G</td>
+								<td>H</td>
+								<td>I</td>
+								<td>J</td>
+								<td>K</td>
+								<td>L</td>
+								<td>M</td>
+								<td>N</td>
+								<td>O</td>
+								<td>P</td>
+								<td>Q</td>
+								<td>R</td>
+								<td>S</td>
+								<td>T</td>
+								<td>U</td>
+								<td>V</td>
+								<td>W</td>
+								<td>X</td>
+								<td>Y</td>
+								<td>Z</td>
+							</tr>
+							<tr style="font-size: 0.8em;" class="fragment">
+								<td>47</td>
+								<td>17</td>
+								<td>10</td>
+								<td>36</td>
+								<td>52</td>
+								<td>22</td>
+								<td>37</td>
+								<td>4</td>
+								<td>0</td>
+								<td>0</td>
+								<td>6</td>
+								<td>6</td>
+								<td>85</td>
+								<td>9</td>
+								<td>19</td>
+								<td>29</td>
+								<td>75</td>
+								<td>5</td>
+								<td>6</td>
+								<td>5</td>
+								<td>28</td>
+								<td>2</td>
+								<td>0</td>
+								<td>25</td>
+								<td>16</td>
+								<td>45</td>
+							</tr>
+						</table>
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Anàlisi de freqüència</h3>
+						<p data-id="quijote" style="font-family:'Courier New', Courier, monospace; font-size: 0.6em; text-align:justify;">TQOT<span style="color: red;">M</span>E BGQE QEF<span style="color: red;">M</span>E BDQHQZOUAZQE ZA CGUEA <span style="color: red;">M</span>SG<span style="color: red;">M</span>DP<span style="color: red;">M</span>D Y<span style="color: red;">M</span>E FUQYBA <span style="color: red;">M</span> BAZQD QZ QRQOFA EG BQZE<span style="color: red;">M</span>YUQZFA <span style="color: red;">M</span>BDQF<span style="color: red;">M</span>ZPAXQ <span style="color: red;">M</span> QXXA X<span style="color: red;">M</span> R<span style="color: red;">M</span>XF<span style="color: red;">M</span> CGQ QX BQZE<span style="color: red;">M</span>N<span style="color: red;">M</span> CGQ T<span style="color: red;">M</span>OU<span style="color: red;">M</span> QZ QX YGZPA EG F<span style="color: red;">M</span>DP<span style="color: red;">M</span>ZL<span style="color: red;">M</span> EQSGZ QD<span style="color: red;">M</span>Z XAE <span style="color: red;">M</span>SD<span style="color: red;">M</span>HUAE CGQ BQZE<span style="color: red;">M</span>N<span style="color: red;">M</span> PQET<span style="color: red;">M</span>OQD FGQDFAE CGQ QZPQDQL<span style="color: red;">M</span>D EUZD<span style="color: red;">M</span>LAZQE CGQ QZYQZP<span style="color: red;">M</span>D K <span style="color: red;">M</span>NGEAE CGQ YQVAD<span style="color: red;">M</span>D K PQGP<span style="color: red;">M</span>E CGQ E<span style="color: red;">M</span>FUER<span style="color: red;">M</span>OQD K <span style="color: red;">M</span>EU EUZ P<span style="color: red;">M</span>D B<span style="color: red;">M</span>DFQ <span style="color: red;">M</span> BQDEAZ<span style="color: red;">M</span> <span style="color: red;">M</span>XSGZ<span style="color: red;">M</span> PQ EG UZFQZOUAZ K EUZ CGQ Z<span style="color: red;">M</span>PUQ XQ HUQEQ GZ<span style="color: red;">M</span> Y<span style="color: red;">M</span>Z<span style="color: red;">M</span>Z<span style="color: red;">M</span> <span style="color: red;">M</span>ZFQE PQX PU<span style="color: red;">M</span> CGQ QD<span style="color: red;">M</span> GZA PQ XAE O<span style="color: red;">M</span>XGDAEAE PQX YQE PQ VGXUA EQ <span style="color: red;">M</span>DYA PQ FAP<span style="color: red;">M</span>E EGE <span style="color: red;">M</span>DY<span style="color: red;">M</span>E EGNUA EANDQ DAOUZ<span style="color: red;">M</span>ZFQ BGQEF<span style="color: red;">M</span> EG Y<span style="color: red;">M</span>X OAYBGQEF<span style="color: red;">M</span> OQX<span style="color: red;">M</span>P<span style="color: red;">M</span> QYND<span style="color: red;">M</span>LA EG <span style="color: red;">M</span>P<span style="color: red;">M</span>DS<span style="color: red;">M</span> FAYA EG X<span style="color: red;">M</span>ZL<span style="color: red;">M</span> K BAD X<span style="color: red;">M</span> BGQDF<span style="color: red;">M</span> R<span style="color: red;">M</span>XE<span style="color: red;">M</span> PQ GZ OADD<span style="color: red;">M</span>X E<span style="color: red;">M</span>XUA <span style="color: red;">M</span>X O<span style="color: red;">M</span>YBA OAZ SD<span style="color: red;">M</span>ZPUEUYA OAZFQZFA K <span style="color: red;">M</span>XNADALA PQ HQD OAZ OG<span style="color: red;">M</span>ZF<span style="color: red;">M</span> R<span style="color: red;">M</span>OUXUP<span style="color: red;">M</span>P T<span style="color: red;">M</span>NU<span style="color: red;">M</span> P<span style="color: red;">M</span>PA BDUZOUBUA <span style="color: red;">M</span> EG NGQZ PQEQA</p>
+						<table data-id="table" style="font-size: 0.7em;" class="cryptotable">
+							<tr>
+								<td>A</td>
+								<td>B</td>
+								<td>C</td>
+								<td>D</td>
+								<td>E</td>
+								<td>F</td>
+								<td>G</td>
+								<td>H</td>
+								<td>I</td>
+								<td>J</td>
+								<td>K</td>
+								<td>L</td>
+								<td style="color: red;">M</td>
+								<td>N</td>
+								<td>O</td>
+								<td>P</td>
+								<td>Q</td>
+								<td>R</td>
+								<td>S</td>
+								<td>T</td>
+								<td>U</td>
+								<td>V</td>
+								<td>W</td>
+								<td>X</td>
+								<td>Y</td>
+								<td>Z</td>
+							</tr>
+							<tr style="font-size: 0.8em;">
+								<td>47</td>
+								<td>17</td>
+								<td>10</td>
+								<td>36</td>
+								<td>52</td>
+								<td>22</td>
+								<td>37</td>
+								<td>4</td>
+								<td>0</td>
+								<td>0</td>
+								<td>6</td>
+								<td>6</td>
+								<td style="color: red;">85</td>
+								<td>9</td>
+								<td>19</td>
+								<td>29</td>
+								<td>75</td>
+								<td>5</td>
+								<td>6</td>
+								<td>5</td>
+								<td>28</td>
+								<td>2</td>
+								<td>0</td>
+								<td>25</td>
+								<td>16</td>
+								<td>45</td>
+							</tr>
+						</table>
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Anàlisi de freqüència</h3>
+						<p style="font-family: 'Courier New', Courier, monospace; font-size: 0.6em; text-align:justify;">LIGLEW TYIW IWXEW TVIZIRGMSRIW RS UYMWS EKYEVHEV QEW XMIQTS E TSRIV IR IJIGXS WY TIRWEQMIRXS ETVIXERHSPI E IPPS PE JEPXE UYI IP TIRWEFE UYI LEGME IR IP QYRHS WY XEVHERDE WIKYR IVER PSW EKVEZMSW UYI TIRWEFE HIWLEGIV XYIVXSW UYI IRHIVIDEV WMRVEDSRIW UYI IRQIRHEV C EFYWSW UYI QINSVEV C HIYHEW UYI WEXMWJEGIV C EWM WMR HEV TEVXI E TIVWSRE EPKYRE HI WY MRXIRGMSR C WMR UYI REHMI PI ZMIWI YRE QERERE ERXIW HIP HME UYI IVE YRS HI PSW GEPYVSWSW HIP QIW HI NYPMS WI EVQS HI XSHEW WYW EVQEW WYFMS WSFVI VSGMRERXI TYIWXE WY QEP GSQTYIWXE GIPEHE IQFVEDS WY EHEVKE XSQS WY PERDE C TSV PE TYIVXE JEPWE HI YR GSVVEP WEPMS EP GEQTS GSR KVERHMWMQS GSRXIRXS C EPFSVSDS HI ZIV GSR GYERXE JEGMPMHEH LEFME HEHS TVMRGMTMS E WY FYIR HIWIS</p>
+						<table data-id="table" style="font-size: 0.7em;" class="cryptotable">
+							<tr>
+								<td>I</td>
+								<td>J</td>
+								<td>K</td>
+								<td>L</td>
+								<td style="color: blue;">M</td>
+								<td>N</td>
+								<td>O</td>
+								<td>P</td>
+								<td>Q</td>
+								<td>R</td>
+								<td>S</td>
+								<td>T</td>
+								<td>U</td>
+								<td>V</td>
+								<td>W</td>
+								<td>X</td>
+								<td>Y</td>
+								<td>Z</td>
+								<td>A</td>
+								<td>B</td>
+								<td>C</td>
+								<td>D</td>
+								<td>E</td>
+								<td>F</td>
+								<td>G</td>
+								<td>H</td>
+							</tr>
+							<tr>
+								<td>A</td>
+								<td>B</td>
+								<td>C</td>
+								<td>D</td>
+								<td style="color: blue;">E</td>
+								<td>F</td>
+								<td>G</td>
+								<td>H</td>
+								<td>I</td>
+								<td>J</td>
+								<td>K</td>
+								<td>L</td>
+								<td>M</td>
+								<td>N</td>
+								<td>O</td>
+								<td>P</td>
+								<td>Q</td>
+								<td>R</td>
+								<td>S</td>
+								<td>T</td>
+								<td>U</td>
+								<td>V</td>
+								<td>W</td>
+								<td>X</td>
+								<td>Y</td>
+								<td>Z</td>
+							</tr>
+						</table>
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Anàlisi de freqüència</h3>
+						<p style="font-family: 'Courier New', Courier, monospace; font-size: 0.6em; text-align:justify;">HECH<span style="color: red;" >A</span>S PUES EST<span style="color: red;" >A</span>S PREVENCIONES NO QUISO <span style="color: red;" >A</span>GU<span style="color: red;" >A</span>RD<span style="color: red;" >A</span>R M<span style="color: red;" >A</span>S TIEMPO <span style="color: red;" >A</span> PONER EN EFECTO SU PENS<span style="color: red;" >A</span>MIENTO <span style="color: red;" >A</span>PRET<span style="color: red;" >A</span>NDOLE <span style="color: red;" >A</span> ELLO L<span style="color: red;" >A</span> F<span style="color: red;" >A</span>LT<span style="color: red;" >A</span> QUE EL PENS<span style="color: red;" >A</span>B<span style="color: red;" >A</span> QUE H<span style="color: red;" >A</span>CI<span style="color: red;" >A</span> EN EL MUNDO SU T<span style="color: red;" >A</span>RD<span style="color: red;" >A</span>NZ<span style="color: red;" >A</span> SEGUN ER<span style="color: red;" >A</span>N LOS <span style="color: red;" >A</span>GR<span style="color: red;" >A</span>VIOS QUE PENS<span style="color: red;" >A</span>B<span style="color: red;" >A</span> DESH<span style="color: red;" >A</span>CER TUERTOS QUE ENDEREZ<span style="color: red;" >A</span>R SINR<span style="color: red;" >A</span>ZONES QUE ENMEND<span style="color: red;" >A</span>R Y <span style="color: red;" >A</span>BUSOS QUE MEJOR<span style="color: red;" >A</span>R Y DEUD<span style="color: red;" >A</span>S QUE S<span style="color: red;" >A</span>TISF<span style="color: red;" >A</span>CER Y <span style="color: red;" >A</span>SI SIN D<span style="color: red;" >A</span>R P<span style="color: red;" >A</span>RTE <span style="color: red;" >A</span> PERSON<span style="color: red;" >A</span> <span style="color: red;" >A</span>LGUN<span style="color: red;" >A</span> DE SU INTENCION Y SIN QUE N<span style="color: red;" >A</span>DIE LE VIESE UN<span style="color: red;" >A</span> M<span style="color: red;" >A</span>N<span style="color: red;" >A</span>N<span style="color: red;" >A</span> <span style="color: red;" >A</span>NTES DEL DI<span style="color: red;" >A</span> QUE ER<span style="color: red;" >A</span> UNO DE LOS C<span style="color: red;" >A</span>LUROSOS DEL MES DE JULIO SE <span style="color: red;" >A</span>RMO DE TOD<span style="color: red;" >A</span>S SUS <span style="color: red;" >A</span>RM<span style="color: red;" >A</span>S SUBIO SOBRE ROCIN<span style="color: red;" >A</span>NTE PUEST<span style="color: red;" >A</span> SU M<span style="color: red;" >A</span>L COMPUEST<span style="color: red;" >A</span> CEL<span style="color: red;" >A</span>D<span style="color: red;" >A</span> EMBR<span style="color: red;" >A</span>ZO SU <span style="color: red;" >A</span>D<span style="color: red;" >A</span>RG<span style="color: red;" >A</span> TOMO SU L<span style="color: red;" >A</span>NZ<span style="color: red;" >A</span> Y POR L<span style="color: red;" >A</span> PUERT<span style="color: red;" >A</span> F<span style="color: red;" >A</span>LS<span style="color: red;" >A</span> DE UN CORR<span style="color: red;" >A</span>L S<span style="color: red;" >A</span>LIO <span style="color: red;" >A</span>L C<span style="color: red;" >A</span>MPO CON GR<span style="color: red;" >A</span>NDISIMO CONTENTO Y <span style="color: red;" >A</span>LBOROZO DE VER CON CU<span style="color: red;" >A</span>NT<span style="color: red;" >A</span> F<span style="color: red;" >A</span>CILID<span style="color: red;" >A</span>D H<span style="color: red;" >A</span>BI<span style="color: red;" >A</span> D<span style="color: red;" >A</span>DO PRINCIPIO <span style="color: red;" >A</span> SU BUEN DESEO</p>
+						<table data-id="table" style="font-size: 0.7em;" class="cryptotable">
+							<tr>
+								<td style="color: blue;">M</td>
+								<td>N</td>
+								<td>O</td>
+								<td>P</td>
+								<td>Q</td>
+								<td>R</td>
+								<td>S</td>
+								<td>T</td>
+								<td>U</td>
+								<td>V</td>
+								<td>W</td>
+								<td>X</td>
+								<td>Y</td>
+								<td>Z</td>
+								<td>A</td>
+								<td>B</td>
+								<td>C</td>
+								<td>D</td>
+								<td>E</td>
+								<td>F</td>
+								<td>G</td>
+								<td>H</td>
+								<td>I</td>
+								<td>J</td>
+								<td>K</td>
+								<td>L</td>
+							</tr>
+							<tr>
+								<td style="color: blue;">A</td>
+								<td>B</td>
+								<td>C</td>
+								<td>D</td>
+								<td>E</td>
+								<td>F</td>
+								<td>G</td>
+								<td>H</td>
+								<td>I</td>
+								<td>J</td>
+								<td>K</td>
+								<td>L</td>
+								<td>M</td>
+								<td>N</td>
+								<td>O</td>
+								<td>P</td>
+								<td>Q</td>
+								<td>R</td>
+								<td>S</td>
+								<td>T</td>
+								<td>U</td>
+								<td>V</td>
+								<td>W</td>
+								<td>X</td>
+								<td>Y</td>
+								<td>Z</td>
+							</tr>
+							<tr style="font-size: 0.8em;">
+								<td style="color: blue;">85</td>
+								<td>9</td>
+								<td>19</td>
+								<td>29</td>
+								<td>75</td>
+								<td>5</td>
+								<td>6</td>
+								<td>5</td>
+								<td>28</td>
+								<td>2</td>
+								<td>0</td>
+								<td>25</td>
+								<td>16</td>
+								<td>45</td>
+								<td>47</td>
+								<td>17</td>
+								<td>10</td>
+								<td>36</td>
+								<td>52</td>
+								<td>22</td>
+								<td>37</td>
+								<td>4</td>
+								<td>0</td>
+								<td>0</td>
+								<td>6</td>
+								<td>6</td>
+							</tr>
+						</table>
+					</section>
+					<section  data-auto-animate data-auto-animate-restart id="polialfabetic" data-background-color= #eee>
+						<h3 style="margin-bottom: 25px;">Xifratge Polialfabètic</h3>
+						<div class="wrapper2" id="polialfabetic">
+							<div>
+								<ul style="margin-top: 50px; font-size: 0.55em;">
+									<li style="margin-top: 15px;">La clau depen de la posició del text que volem encriptat.</li>
+									<li style="margin-top: 15px;">Una mateixa lletra, en diferents posicions del text s'encripta de manera diferent.</li>
+									<li style="margin-top: 15px;">Xifratge Vigenère.</li>
+									<li style="margin-top: 15px;">Xifrat d'Alberti</li>
+								</ul>
+								<img src="https://criptografia20162.files.wordpress.com/2016/06/alberti.jpg">
+							</div>
+							<div>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/VigenereSquare2.jpg" style="max-height: 500px;">
+							</div>
+						</div>
+					</section>
+					<section data-auto-animate id="polialfabetic" data-background-color= #eee>
+						<h3 style="margin-bottom: 45px;">Xifratge Polialfabètic</h3>
+						<ul style="margin-bottom: 45px;">
+							<li>La clau depen de la posició del text que volem encriptat.</li>
+							<li>Una mateixa lletra, en diferents posicions del text s'encripta de manera diferent.</li>
+							<li>Xifratge Vigenère.</li>
+							<li>Clau DUH -- Les lletres es desplacen 3, 20 o 7 posicions.</li>
+						</ul><br>
+						<table class="cryptotable" id="taulavigenere">
+							<tr>
+								<td>T</td>
+								<td>O</td>
+								<td>R</td>
+								<td>R</td>
+								<td>E</td>
+								<td>D</td>
+								<td>E</td>
+								<td>L</td>
+								<td>P</td>
+								<td>A</td>
+								<td>L</td>
+								<td>A</td>
+								<td>U</td>
+							</tr>
+							<tr class="fragment">
+								<td>+3</td>
+								<td>+20</td>
+								<td>+7</td>
+								<td>+3</td>
+								<td>+20</td>
+								<td>+7</td>
+								<td>+3</td>
+								<td>+20</td>
+								<td>+7</td>
+								<td>+3</td>
+								<td>+20</td>
+								<td>+7</td>
+								<td>+3</td>
+							</tr>
+							<tr class="fragment">
+								<td>W</td>
+								<td>I</td>
+								<td>Y</td>
+								<td>U</td>
+								<td>Y</td>
+								<td>K</td>
+								<td>H</td>
+								<td>F</td>
+								<td>W</td>
+								<td>D</td>
+								<td>F</td>
+								<td>H</td>
+								<td>X</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2 id="segonaguerramundial">Segona Guerra Mundial</h2>
+					</section>
+					<section data-background-color= #eee>
+						<h3>Màquina Enigma</h3>
+						<div class="r-stack">
+							<img class="fragment fade-out" data-fragment-index="0" src="dist/images/enigma2.png">
+							<img class="fragment current-visible" data-fragment-index="0" src="dist/images/enigma1.png">
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Criptografia Moderna</h2>
+					</section>
+					<section data-background-color= #eee>
+						<h3>Criptografia Simètrica - DES</h3>
+						<div>
+							<ul>
+								<li>Una mateixa clau per a xifrar i desxifrar</li>
+								<li>Xifratge de Bloc</li>
+								<li>Xifratge de Flux</li>
+							</ul>
+						</div>
+						<div>
+							<img style="height: 40vh;" data-id="imagessimetric" src="https://sites.google.com/site/seguridadinformaticadavid/_/rsrc/1547380095095/tema-4---criptografia/4-2--cifrado-de-la-clave-simetrica/clave%20simetrica.jpg">
+						</div>
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Criptografia Asimètrica - RSA</h3>
+						<ul>
+							<li>Una clau per a xifrar i una diferent per desxifrar</li>
+							<li>Clau pública => Xifrar</li>
+							<li>Clau privada => Desxifrar</li>
+						</ul>
+						<img style="height: 40vh;" src="https://protecciondatos-lopd.com/empresas/wp-content/uploads/2020/05/encriptacion-asimetrica.jpg">
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Criptografia Asimètrica - RSA</h3>
+						<ul>
+							<li>Una clau per a xifrar i una diferent per desxifrar</li>
+							<li>Clau pública => Xifrar</li>
+							<li>Clau privada => Desxifrar</li>
+						</ul><br>
+						<h4 style="margin-top: 85px; margin-left: 20px; font-size: 0.8em;">Creació de claus:</h4>
+						<ol style="font-size: 0.65em">
+							<li><strong>p</strong> i <strong>q</strong>: Nombres primers aleatoris</li>
+							<li><strong>n</strong> = p * q</li>
+							<li><strong>λ(n)</strong> = (p-1) * (q-1)</li>
+							<li><strong>e</strong> tal que: 1 < e < λ(n) i mcd(e, λ(n)) = 1</li>
+							<li><strong>d</strong> tal que (e * d) mod f(n) = 1</li>
+						</ol>
+					</section>
+					<section data-auto-animate data-background-color= #eee>
+						<h3>Criptografia Asimètrica - RSA</h3>
+						<h4 style="margin-top: 25px; margin-left: 20px; font-size: 0.8em;">Creació de claus:</h4>
+						<ol style="font-size: 0.65em">
+							<li><strong>p</strong> i <strong>q</strong>: Nombres primers aleatoris</li>
+							<li><strong>n</strong> = p * q</li>
+							<li><strong>λ(n)</strong> = (p-1) * (q-1)</li>
+							<li><strong>e</strong> tal que: 1 < e < λ(n) i mcd(e, λ(n)) = 1</li>
+							<li><strong>d</strong> tal que (e * d) mod f(n) = 1</li>
+						</ol>
+						<p style="font-size: 0.75em">Clau pública: <strong>n</strong> i <strong>e</strong></p>
+						<p style="font-size: 0.75em">Clau privada: <strong>n</strong> i <strong>d</strong></p>
+						<p style="font-size: 0.75em">Encriptació: c(m) = <strong>m<sup>e</sup></strong> mod <strong>n</strong></p>
+						<p style="font-size: 0.75em">Desencriptació: m(c) = <strong>m<sup>d</sup></strong> mod <strong>n</strong></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Aplicacions</h2>
+					</section>
+					<section data-background-color= #eee>
+						<h3>Algoritmes de xifratge</h3>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Esquema_per_il%C2%B7lustrar_el_xifratge_simetric.PNG">
+					</section>
+					<section data-background-color= #eee>
+						<h3>Signatura electrònica</h3>
+						<img class="r-strech" style="margin-top: 30px;" src="https://www.descom.es/wp-content/uploads/2013/04/firma%20digital%201.png">
+					</section>
+					<section data-background-color= #eee>
+						<h3>Certificats digitals</h3>
+						<img style="height: 45vh; border: 5px solid black;" src="dist/images/image28.png">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Part Pràctica</h2>
+					</section>
+					<section data-background-color= #eee>
+						<h3>Xifratge Cèsar</h3>
+						<pre><code width="800px" data-trim data-line-numbers="3-11|13-21|23-30">
+							<script>
+						
+							function sanitizetext(str){
+								const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
+								const to = 'AAAAEEEEIIIIOOOOUUUUNC';
+								for (let i=0, l=from.length; i<l; i++) {
+								  str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+								}
+								str.replace(/[^a-z0-9]/g, '');
+								return str;
+							}	
+							
+							for (let i = 0; i < lengthplaintext; i++) {
+								if (textsanitized.charCodeAt(i) >= 65 && textsanitized.charCodeAt(i) <= 90){
+									ciphernum[i] = textsanitized.charCodeAt(i) + ciphersanitized.charCodeAt() -65 -65;
+									ciphertext[i] = getLetter(ciphernum[i]);
+									count++;
+								} else {
+									ciphertext[i] = ' ';
+								}
+							}
+
+							function getLetter(num){
+								if (num>=26){
+								num = num-26;
+								} else if (num<0){
+								num = num+26;
+								}
+								return String.fromCharCode(num + 65);
+							}
+
+							</script>
+						</code></pre>							
+					</section>
+					<section data-background-iframe="http://raul.cano-esbri.com/tdr_criptografia/cesar.html" data-background-interactive></section>
+					<section data-background-color= #eee>
+						<h3>Xifratge Vigenère</h3>
+						<pre><code width="800px" style="height:450px;width:900px" data-trim>
+							<script>
+
+								for (let i = 0; i < lengthplaintext; i++) {
+									if (textsanitized.charCodeAt(i) >= 65 && textsanitized.charCodeAt(i) <= 90){
+										ciphernum[i] = textsanitized.charCodeAt(i) + ciphersanitized.charCodeAt(count % lengthcipher) -65 -65;
+										ciphertext[i] = getLetter(ciphernum[i]);
+										count++;
+									} else {
+										ciphertext[i] = ' ';
+									}
+								}
+
+							</script>
+						</code></pre>							
+					</section>
+					<section data-background-iframe="http://raul.cano-esbri.com/tdr_criptografia/vigenere.html" data-background-interactive></section>
+					<section data-background-color= #eee>
+						<h3>Encriptació Asimètrica: RSA</h3>
+						<pre><code width="800px" data-trim data-line-numbers="3-9|26-36|9-15|16-18|56-77|19-21|108-127|22-24|129-144|146-164">
+							<script>
+
+								function calcularclaus(){
+									let p = randomnumber();
+									console.log(p);
+									document.getElementById('p').innerText = p;
+									let q = randomnumber();
+									console.log(q);
+									document.getElementById('q').innerText = q;
+									let n = p*q;
+									console.log(n);
+									document.getElementById('n').innerText = n;
+									let z = (p-1)*(q-1);
+									console.log(z);
+									document.getElementById('z').innerText = z;
+									let k = findCoprime(z);
+									console.log(k);
+									document.getElementById('k').innerText = k;
+									let j = findj(z, k);
+									console.log(j);
+									document.getElementById('j').innerText = j;
+									claus = [BigInt(p), BigInt(q), BigInt(n), BigInt(z), BigInt(k), BigInt(j)];
+									console.log('works');
+								}
+
+								function randomnumber(){
+									let prime = false;
+									while (prime === false){
+										let num = Math.floor(Math.random() * 1500);
+										prime = isPrime(num);
+										if (prime === true){
+											console.log('works');
+											return num;
+											break;
+										}
+									}
+								}
+
+								function isPrime(num) {
+									if (num <= 3) {
+									return num > 1;
+									}
+									if ((num % 2 === 0) || (num % 3 === 0)) {
+									return false;
+									}
+									let count = 5;
+									while (Math.pow(count, 2) <= num) {
+									if (num % count === 0 || num % (count + 2) === 0) {
+										return false;
+									}
+									count += 6;
+									}
+									return true;
+								}
+
+								function findCoprime(num) {
+									let coprime=false;
+									let factors = factorizar(num);
+									let count = 1;
+									let coPrime;
+									while (coprime === false){
+									let num2 = 16 + count;
+									let length = factors.length;
+									let strposition = 1;
+									while (strposition <= length+1) {
+										if (num2 % factors[strposition] === 0) {
+										break;
+										} else if (strposition === length){
+										coprime = true;
+										coPrime = num2;
+										}
+										strposition++;
+									}
+									count++;
+									}
+									return coPrime;
+								}
+
+								function factorizar(num) {
+									let factors = [];
+									if (num % 2 === 0){
+									factors[1] = 2;
+									}
+									if (num % 3 === 0) {
+									factors[2] = 3;
+									}
+									let count = 5;
+									let strposition = 3;
+									while (count <= num) {
+									if (num % count === 0) {
+										if (isPrime(count) === true){
+										factors[strposition] = count;
+										strposition++;
+										}
+									}
+									if (num % (count + 2) === 0) {
+										if (isPrime(count+2) === true){
+										factors[strposition] = count + 2;
+										strposition++;
+										}
+									}
+									count += 6;
+									}
+									console.log(factors);
+									return factors;
+								}
+
+								function findj(num1, num2) {
+									let found = false;
+									let z = num1;
+									console.log(z);
+									let k = num2;
+									console.log(k);
+									let x=1;
+									while (found === false){
+										let j = ((1+(x*z))/k);
+										console.log(j % 1);
+										console.log(j % 1 === 0);
+										x++;
+										if (j % 1 == 0){
+											console.log(j);
+											found = true;
+											return j;
+										}
+									}
+									return j;
+								}
+
+								function encriptar(){
+									let text = document.getElementById('cleartext').value;
+									let cleartext = processtext(text);
+									let length = cleartext.length;
+									let ciphertext = [];
+									for (i=0; i<length; i++){
+										console.log(claus);
+										ciphertext[i] = BigInt(((BigInt(cleartext[i])**claus[4]) % claus[2]));
+										console.log(ciphertext);
+										document.getElementById('resultat').innerText = ciphertext;
+									}
+									console.log(ciphertext);
+									let textencriptat = ciphertext.join('');
+									document.getElementById('resultat').innerText = ciphertext;
+									return ciphertext;
+								} 
+
+								function desencriptar(){
+									textencriptat = document.getElementById('ciphertext').value;
+									console.log(textencriptat);
+									let ciphertext = textencriptat.split(',');
+									console.log(ciphertext);
+									let length = ciphertext.length;
+									let result = [];
+									for (i=0; i<length; i++){
+										console.log(claus);
+										cleartext[i] = BigInt(((BigInt(ciphertext[i])**claus[5]) % claus[2]));
+										console.log(cleartext);
+										result[i] = getLetter(Number(cleartext[i]));
+										console.log(result);
+									}
+									console.log(cleartext);
+									let textfinal = result.join('');
+									console.log(result);
+									document.getElementById('resultat2').innerText = textfinal;
+								}
+
+							</script>
+						</code></pre>							
+					</section>
+				<section data-background-iframe="http://raul.cano-esbri.com/tdr_criptografia/asimetric.html" data-background-interactive></section>	
+				</section>
+				<section>
+					<section><h2>Encriptació Musical</h2></section>
+					<section data-auto-animate>
+						<img src="dist/images/musica1.PNG">
+					</section>
+					<section data-auto-animate>
+						<h4 style="font-size: 0.8em;">Clau: M ½ Sol</h4>
+						<img src="dist/images/musica2.PNG">
+					</section>
+					<section data-auto-animate>
+						<h4 style="font-size: 0.8em;">Clau: D-U-H ½ Sol: Taula 1</h4>
+						<img src="dist/images/musica3.PNG">
+					</section>
+					<section data-auto-animate>
+						<h4 style="font-size: 0.8em;">Clau: D-U-H ½ Sol: Taula 2</h4>
+						<img src="dist/images/musica4.PNG">
+					</section>
+					<section data-auto-animate>
+						<h4 style="font-size: 0.8em;">Clau: D-U-H ½ Sol: Taula 3</h4>
+						<img src="dist/images/musica5.PNG">
+					</section>
+					<section data-auto-animate>
+						<h4 style="font-size: 0.8em;">Encriptació amb clau D-U-H ½ Sol</h4>
+						<img src="dist/images/musica6.PNG">
+						<iframe src="https://flat.io/embed/635786ce07a2b0001394ee94?_l=true&sharingKey=fe772f26190bc32a161020481e0e292f51fd629bf164d6f3f985e5b1064db1a70ef017cedbe6cbbf922190dc6fbdfdcc116b90bda0a3b8c42cab09d17cfa2395" height="250" width="800" frameBorder="0" allowfullscreen></iframe><div style="font-size: 11px; color: #3981FF;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif,sans-serif;margin-top: 4px">
+					</section>
+				</section>
+				<section data-background="#000" data-visibility="uncounted"></section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
