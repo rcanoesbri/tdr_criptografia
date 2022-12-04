@@ -6,6 +6,14 @@ document.getElementById("cesar").onclick = function () {
     location.href = "cesar.html";
 }
 
+document.getElementById("botochat").onclick = function () {
+    location.href = "chat2.html";
+}
+
+document.getElementById("botopresentacio").onclick = function () {
+    location.href = "presentacio/index.html";
+}
+
 document.getElementById("asimetrica").onclick = function () {
     location.href = "asimetric.html";
 }

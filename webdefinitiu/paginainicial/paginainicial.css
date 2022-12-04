@@ -45,3 +45,16 @@ a{
     max-width: 86%;
     margin-left: 7%;
 }
+
+.button {
+  border-radius: 5px;
+  padding: 0.6em;
+  border: 2px;
+  border: solid;  
+  border-color: #080950;
+  text-align: center;
+  cursor: pointer;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 70ch;
+}
