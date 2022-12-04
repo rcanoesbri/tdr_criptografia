@@ -5,10 +5,6 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 
-app.get('/', function (req, res) {
-  res.send('Hello World!!');
-});
-
 app.use(express.static('webdefinitiu'));
 
 app.use(function (req, res, next) {
@@ -26,11 +22,12 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3000, () => {
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
   let host = server.address().address;
-  let port = server.address().port;
+  let portdef = server.address().port;
 
-  console.log('Example app listeing at http://%s:%s', host, port);
+  console.log('Example app listeing at http://%s:%s', host, portdef);
 });
 
 io.emit('some event', { someProperty: 'some value', otherProperty: 'other value' }); // This will emit the event to all connected sockets
