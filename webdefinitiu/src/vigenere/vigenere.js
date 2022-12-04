@@ -52,7 +52,6 @@ function getLetter(num){
   }
   
   function encriptar(){
-    console.log('funciona');
     let cipher = document.getElementById('cipher').value;
     cipher = cipher.toUpperCase();
     let ciphersanitized = sanitizecipher(cipher);
