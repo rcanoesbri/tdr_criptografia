@@ -1,0 +1,125 @@
+:root {
+    --r-background-image: linear-gradient(to bottom, #283b95, #17b2c3);
+    --r-h1-font: League Gothic, Impact, sans-serif;
+    --r-main-font: Lato, sans-serif;
+    --r-heading1-text-shadow: -3px 4px 5px #ccc;
+}
+
+.reveal {
+    background-image: linear-gradient(to bottom, #283b95, #17b2c3);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-template-rows: repeat(1, 1fr);
+  }
+  
+  .wrapper > div {
+    margin-top: 35%;
+    border-radius: 10px;
+    padding: 0.6em;
+    border: 4px;
+    border: solid;  
+    border-color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wrapper2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-template-rows: repeat(1, 1fr);
+}
+
+
+
+.reveal h1 {
+    font-size: 3em;
+    color: #000;
+    text-shadow: var(--r-heading1-text-shadow);
+}
+
+.reveal h2 {
+    font-size: 1.5em;
+}
+
+.reveal h3 {
+    margin-top: 35px;
+    font-size: 1em;
+}
+
+.reveal h4 {
+    font-size: 0.5em;
+}
+
+p {
+    text-align: left;
+    font-size: 0.8em;
+}
+
+ul {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    float: left;
+    font-size: 0.65em;
+}
+
+.box {
+    border-radius: 20px;
+    padding: 0.6em;
+    border: 4px;
+    border: solid;  
+    border-color: #000;
+}
+
+#noms {
+    color: #000020;
+}
+
+#seguretatclassica {
+    font-size: 1.2em;
+}
+
+#criptografiaclassica{
+    font-size: 1.2em;
+}
+
+#segonaguerramundial{
+    font-size: 1.2em;
+}
+
+code {
+    font-size: 0.75em;
+}
+
+table.cryptotable td {
+    font-size: 0.75em;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 45px;
+}
+
+.reveal img {
+    margin-top: 30px;
+}
+
+.mainindex {
+    color: black; 
+    font-size:0.8em; 
+    float:left;
+    /*counter-reset: item;*/
+}
+
+/*
+.mainindex li {
+    display: block;
+}
+
+.mainindex li:before {
+    content: counters(item, ".") " "; 
+    counter-increment: item;
+}
+*/
