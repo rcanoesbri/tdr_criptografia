@@ -113,6 +113,12 @@ table.cryptotable td {
     /*counter-reset: item;*/
 }
 
+.mainindex p {
+    font-size: 0.75em;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
 /*
 .mainindex li {
     display: block;

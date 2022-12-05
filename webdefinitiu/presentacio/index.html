@@ -25,28 +25,50 @@
 						Shhh, these are your private notes 📝
 					</aside>
 				</section>
+				<section data-background-color= #000000>
+					<h2 class="fragment" style="font-size: 0.85em; color: white;"><em>Que és la criptografia?</em></h2>
+					<h2 class="fragment" style="font-size: 0.85em; color: white;"><em>Quins són els seus origens?</em></h2>
+					<h2 class="fragment" style="font-size: 0.85em; color: white;"><em>Com afecta al món tecnològic en el que vivim?</em></h2>
+					<h2 class="fragment" style="font-size: 0.85em; color: white;"><em>Pot qualsevol crear un mètode d'encriptació segur?</em></h2>
+				</section>
+				<section>
+					<h2>Objectius:</h2>
+					<ul class="objectius">
+						<div class="fragment">
+							<li  style="color: #000; font-size: 1.5em;"><strong>Part Teòrica</strong></li>
+							<ul>						
+								<li style="color: #000; font-size: 1.5em;">Història de la criptografia</li>
+								<li style="color: #000; font-size: 1.5em;">Criptografia moderna</li>
+							</ul>
+						</div>
+						<div class="fragment">
+							<li style="color: #000; font-size: 1.5em; margin-top: 90px;"><strong>Part Pràctica</strong></li>
+							<ul>
+								<li style="color: #000; font-size: 1.5em;">Xifratge Cèsar</li>
+								<li style="color: #000; font-size: 1.5em;">Xifratge Vigenère</li>
+								<li style="color: #000; font-size: 1.5em;">Encriptació Asimètrica -- RSA</li>
+								<li style="color: #000; font-size: 1.5em;">Pàgina Web</li>
+								<li style="color: #000; font-size: 1.5em;">Missatges encriptats</li>
+								<li style="color: #000; font-size: 1.5em;">Encriptació Musical</li>
+							</ul>
+						</div>
+						
+					</ul>
+				</section>
 				<section>
 					<h2>Índex:</h2>
 					<ol class="mainindex">
 						<li>Historia</li>
-						<ol>
-							<li>Criptografia Clàssica</li>
-						</ol>
+							<p>1.1. Criptografia Clàssica</p>
 						<li>Xifratges per substitució</li>
-						<ol>
-							<li>Xifratge Monoalfabètic</li>
-							<li>Anàlisi de Freqüència</li>
-							<li>Xifratge Polialfabètic</li>
-						</ol>
+							<p>2.1. Xifratge Monoalfabètic</p>
+							<p>2.2. Anàlisi de Freqüència</p>
+							<p>2.3. Xifratge Polialfabètic</p>
 						<li>Segona Guerra Mundial</li>
-						<ol>
-							<li>Màquina Enigma</li>
-						</ol>
+							<p>3.1. Màquina Enigma</p>
 						<li>Criptografia Moderna</li>
-						<ol>
-							<li>Criptografia Simètrica - DES</li>
-							<li>Criptografia Asimètrica - RSA</li>
-						</ol>
+							<p>4.1. Criptografia Simètrica - DES</p>
+							<p>4.2. Criptografia Asimètrica - RSA</p>
 						<li>Aplicacions</li>
 						<li>Part Pràctica</li>
 					</ol>
@@ -98,11 +120,11 @@
 					</section>
 					<section id="edatmitjana" data-background-color= #eee>
 						<h3>Criptografia a l'Edat Mitjana</h2>
-						<img src="dist/images/edatmitjana1.PNG">
-						<img src="dist/images/edatmitjana2.PNG">
 					</section>
 					<section data-background-color= #eee>
 						<h3>Criptografia a l'Edat Moderna</h3>
+						<img src="dist/images/edatmitjana1.PNG">
+						<img src="dist/images/edatmitjana2.PNG">
 					</section>
 				</section>
 				<section>
@@ -578,7 +600,7 @@
 							<li><strong>n</strong> = p * q</li>
 							<li><strong>λ(n)</strong> = (p-1) * (q-1)</li>
 							<li><strong>e</strong> tal que: 1 < e < λ(n) i mcd(e, λ(n)) = 1</li>
-							<li><strong>d</strong> tal que (e * d) mod f(n) = 1</li>
+							<li><strong>d</strong> tal que (e * d) mod λ(n) = 1</li>
 						</ol>
 					</section>
 					<section data-auto-animate data-background-color= #eee>
@@ -607,7 +629,10 @@
 					</section>
 					<section data-background-color= #eee>
 						<h3>Signatura electrònica</h3>
-						<img class="r-strech" style="margin-top: 30px;" src="https://www.descom.es/wp-content/uploads/2013/04/firma%20digital%201.png">
+						<div class="r-stack">
+							<img class="r-stretch fragment fade-out" data-fragment-index="0" style="margin-top: 30px;" src="https://www.descom.es/wp-content/uploads/2013/04/firma%20digital%201.png">
+							<img class="r-stretch fragment current-visible" data-fragment-index="0" style="margin-top: 30px;" src="https://www.descom.es/wp-content/uploads/2013/04/firma%20digital%203.png">
+						</div>
 					</section>
 					<section data-background-color= #eee>
 						<h3>Certificats digitals</h3>
