@@ -15,13 +15,13 @@
     grid-gap: 10px;
     grid-template-rows: repeat(1, 1fr);
   }
-
+  
   .wrapper > div {
     margin-top: 35%;
     border-radius: 10px;
     padding: 0.6em;
     border: 4px;
-    border: solid;
+    border: solid;  
     border-color: #000;
     text-align: center;
     cursor: pointer;
@@ -71,7 +71,7 @@ ul {
     border-radius: 20px;
     padding: 0.6em;
     border: 4px;
-    border: solid;
+    border: solid;  
     border-color: #000;
 }
 
@@ -106,9 +106,11 @@ table.cryptotable td {
     margin-top: 30px;
 }
 
-ol.mainindex {
-    color: black;
+.mainindex {
+    color: black; 
+    font-size:0.8em; 
     float:left;
+    /*counter-reset: item;*/
 }
 
 .mainindex p {
@@ -116,3 +118,14 @@ ol.mainindex {
     margin-top: 5px;
     margin-bottom: 0px;
 }
+
+/*
+.mainindex li {
+    display: block;
+}
+
+.mainindex li:before {
+    content: counters(item, ".") " "; 
+    counter-increment: item;
+}
+*/

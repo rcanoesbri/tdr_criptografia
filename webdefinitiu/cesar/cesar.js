@@ -31,7 +31,7 @@ function getLetter(num){
     }
     return String.fromCharCode(num + 65);
   }
-
+  
   function sanitizecipher(str){
     const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
     const to = 'AAAAEEEEIIIIOOOOUUUUNC';
@@ -41,7 +41,7 @@ function getLetter(num){
     str.replace(/[^a-z]/g, '');
     return str;
   }
-
+  
   function sanitizetext(str){
     const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
     const to = 'AAAAEEEEIIIIOOOOUUUUNC';
@@ -51,7 +51,7 @@ function getLetter(num){
     str.replace(/[^a-z0-9]/g, '');
     return str;
   }
-
+  
   function encriptar(){
     console.log('funciona');
     let cipher = document.getElementById('cipher').value;
@@ -59,7 +59,7 @@ function getLetter(num){
     let ciphersanitized = sanitizecipher(cipher);
     let lengthcipher=ciphersanitized.length;
     console.log(lengthcipher);
-
+  
     let plaintext = document.getElementById('plaintext').value;
     plaintext = plaintext.toUpperCase();
     let textsanitized = sanitizetext(plaintext);
@@ -67,13 +67,13 @@ function getLetter(num){
     let ciphernum = [];
     let ciphertext = [];
     let count = 0;
-
+  
     console.log(plaintext);
     console.log(textsanitized);
     console.log(cipher);
     console.log(ciphersanitized);
-
-
+  
+  
     for (let i = 0; i < lengthplaintext; i++) {
       if (textsanitized.charCodeAt(i) >= 65 && textsanitized.charCodeAt(i) <= 90){
         ciphernum[i] = textsanitized.charCodeAt(i) + ciphersanitized.charCodeAt() -65 -65;
@@ -85,9 +85,11 @@ function getLetter(num){
     }
     console.log(ciphernum);
     console.log(ciphertext);
+    document.getElementById('clauprocessada1').innerText = ciphersanitized;
+    document.getElementById('textprocessat1').innerText = textsanitized;
     document.getElementById('textoencriptado').innerText = ciphertext.join('');
   }
-
+  
   function desencriptar(){
     console.log('funciona');
     let cipher = document.getElementById('cipher').value;
@@ -95,7 +97,7 @@ function getLetter(num){
     let ciphersanitized = sanitizecipher(cipher);
     let lengthcipher=ciphersanitized.length;
     console.log(lengthcipher);
-
+  
     let plaintext = document.getElementById('plaintext').value;
     plaintext = plaintext.toUpperCase();
     let textsanitized = sanitizetext(plaintext);
@@ -103,13 +105,13 @@ function getLetter(num){
     let ciphernum = [];
     let ciphertext = [];
     let count = 0;
-
+  
     console.log(plaintext);
     console.log(textsanitized);
     console.log(cipher);
     console.log(ciphersanitized);
-
-
+  
+  
     for (let i = 0; i < lengthplaintext; i++) {
       if (textsanitized.charCodeAt(i) >= 65 && textsanitized.charCodeAt(i) <= 90){
         ciphernum[i] = textsanitized.charCodeAt(i) - ciphersanitized.charCodeAt();
@@ -119,12 +121,14 @@ function getLetter(num){
         ciphertext[i] = ' ';
       }
     }
-
+    
     console.log(ciphernum);
     console.log(ciphertext);
+    document.getElementById('clauprocessada1').innerText = ciphersanitized;
+    document.getElementById('textprocessat1').innerText = textsanitized;
     document.getElementById('textoencriptado').innerText = ciphertext.join('');
   }
-
+  
   window.onload = function() {
     const boton = document.getElementById('boton');
     const boton2 = document.getElementById('boton2');
