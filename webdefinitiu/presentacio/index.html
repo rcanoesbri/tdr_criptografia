@@ -28,25 +28,29 @@
 				<section>
 					<h2>Índex:</h2>
 					<ol class="mainindex">
-						<li>Historia</li>
-						<ol>
-							<li>Criptografia Clàssica</li>
-						</ol>
-						<li>Xifratges per substitució</li>
-						<ol>
-							<li>Xifratge Monoalfabètic</li>
-							<li>Anàlisi de Freqüència</li>
-							<li>Xifratge Polialfabètic</li>
-						</ol>
-						<li>Segona Guerra Mundial</li>
-						<ol>
-							<li>Màquina Enigma</li>
-						</ol>
-						<li>Criptografia Moderna</li>
-						<ol>
-							<li>Criptografia Simètrica - DES</li>
-							<li>Criptografia Asimètrica - RSA</li>
-						</ol>
+						<li>Historia
+                            <ol>
+                                <li>Criptografia Clàssica</li>
+                            </ol>
+                        </li>
+						<li>Xifratges per substitució
+                            <ol>
+                                <li>Xifratge Monoalfabètic</li>
+                                <li>Anàlisi de Freqüència</li>
+                                <li>Xifratge Polialfabètic</li>
+                            </ol>
+                        </li>
+						<li>Segona Guerra Mundial
+                            <ol>
+                                <li>Màquina Enigma</li>
+                            </ol>
+                        </li>
+						<li>Criptografia Moderna
+                            <ol>
+                                <li>Criptografia Simètrica - DES</li>
+                                <li>Criptografia Asimètrica - RSA</li>
+                            </ol>
+                        </li>
 						<li>Aplicacions</li>
 						<li>Part Pràctica</li>
 					</ol>
@@ -622,7 +626,7 @@
 						<h3>Xifratge Cèsar</h3>
 						<pre><code width="800px" data-trim data-line-numbers="3-11|13-21|23-30">
 							<script>
-						
+
 							function sanitizetext(str){
 								const from = 'ÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛÑÇ';
 								const to = 'AAAAEEEEIIIIOOOOUUUUNC';
@@ -631,8 +635,8 @@
 								}
 								str.replace(/[^a-z0-9]/g, '');
 								return str;
-							}	
-							
+							}
+
 							for (let i = 0; i < lengthplaintext; i++) {
 								if (textsanitized.charCodeAt(i) >= 65 && textsanitized.charCodeAt(i) <= 90){
 									ciphernum[i] = textsanitized.charCodeAt(i) + ciphersanitized.charCodeAt() -65 -65;
@@ -653,7 +657,7 @@
 							}
 
 							</script>
-						</code></pre>							
+						</code></pre>
 					</section>
 					<section data-background-iframe="http://raul.cano-esbri.com/tdr_criptografia/cesar.html" data-background-interactive></section>
 					<section data-background-color= #eee>
@@ -672,7 +676,7 @@
 								}
 
 							</script>
-						</code></pre>							
+						</code></pre>
 					</section>
 					<section data-background-iframe="http://raul.cano-esbri.com/tdr_criptografia/vigenere.html" data-background-interactive></section>
 					<section data-background-color= #eee>
@@ -821,7 +825,7 @@
 									let textencriptat = ciphertext.join('');
 									document.getElementById('resultat').innerText = ciphertext;
 									return ciphertext;
-								} 
+								}
 
 								function desencriptar(){
 									textencriptat = document.getElementById('ciphertext').value;
@@ -844,9 +848,9 @@
 								}
 
 							</script>
-						</code></pre>							
+						</code></pre>
 					</section>
-				<section data-background-iframe="http://raul.cano-esbri.com/tdr_criptografia/asimetric.html" data-background-interactive></section>	
+				<section data-background-iframe="http://raul.cano-esbri.com/tdr_criptografia/asimetric.html" data-background-interactive></section>
 				</section>
 				<section>
 					<section><h2>Encriptació Musical</h2></section>
