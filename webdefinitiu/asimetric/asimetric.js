@@ -33,167 +33,176 @@ let claus = [];
 
 let textfinal = [];
 
+
 function isPrime(num) {
-    if (num <= 3) {
-      return num > 1;
-    }
-    if ((num % 2 === 0) || (num % 3 === 0)) {
+  if (num <= 3) {
+    return num > 1;
+  }
+  if ((num % 2 === 0) || (num % 3 === 0)) {
+    return false;
+  }
+  let count = 5;
+  while (Math.pow(count, 2) <= num) {
+    if (num % count === 0 || num % (count + 2) === 0) {
       return false;
     }
-    let count = 5;
-    while (Math.pow(count, 2) <= num) {
-      if (num % count === 0 || num % (count + 2) === 0) {
-        return false;
-      }
-      count += 6;
-    }
-    return true;
-}
-  
-function randomnumber(){
-  let prime = false;
-  while (prime === false){
-    let num = Math.floor(Math.random() * 1500);
-    prime = isPrime(num);
-    if (prime === true){
-      console.log('works');
-      return num;
-      break;
-    }
+    count += 6;
   }
+  return true;
+}
+
+function randomnumber(){
+let prime = false;
+while (prime === false){
+  let num = Math.floor(Math.random() * 3000 + 1000);
+  prime = isPrime(num);
+  if (prime === true){
+    console.log('works');
+    return num;
+    break;
+  }
+}
 }
 
 function factorizar(num) {
-    let factors = [];
-    if (num % 2 === 0){
-      factors[1] = 2;
-    }
-    if (num % 3 === 0) {
-      factors[2] = 3;
-    }
-    let count = 5;
-    let strposition = 3;
-    while (count <= num) {
-      if (num % count === 0) {
-        if (isPrime(count) === true){
-          factors[strposition] = count;
-          strposition++;
-        }
+  let factors = [];
+  if (num % 2 === 0){
+    factors[1] = 2;
+  }
+  if (num % 3 === 0) {
+    factors[2] = 3;
+  }
+  let count = 5;
+  let strposition = 3;
+  while (count <= num) {
+    if (num % count === 0) {
+      if (isPrime(count) === true){
+        factors[strposition] = count;
+        strposition++;
       }
-      if (num % (count + 2) === 0) {
-        if (isPrime(count+2) === true){
-          factors[strposition] = count + 2;
-          strposition++;
-        }
-      }
-      count += 6;
     }
-    console.log(factors);
-    return factors;
+    if (num % (count + 2) === 0) {
+      if (isPrime(count+2) === true){
+        factors[strposition] = count + 2;
+        strposition++;
+      }
+    }
+    count += 6;
+  }
+  console.log(factors);
+  return factors;
 }
 
 function findCoprime(num) {
-    let coprime=false;
-    let factors = factorizar(num);
-    let count = 1;
-    let coPrime;
-    while (coprime === false){
-      let num2 = 16 + count;
-      let length = factors.length;
-      let strposition = 1;
-      while (strposition <= length+1) {
-        if (num2 % factors[strposition] === 0) {
-          break;
-        } else if (strposition === length){
-          coprime = true;
-          coPrime = num2;
-        }
-        strposition++;
+  let coprime=false;
+  let factors = factorizar(num);
+  let count = 1;
+  let coPrime;
+  while (coprime === false){
+    let num2 = 16 + count;
+    let length = factors.length;
+    let strposition = 1;
+    while (strposition <= length+1) {
+      if (num2 % factors[strposition] === 0) {
+        break;
+      } else if (strposition === length){
+        coprime = true;
+        coPrime = num2;
       }
-      count++;
+      strposition++;
     }
-    return coPrime;
+    count++;
+  }
+  return coPrime;
 }
 
-function findj(num1, num2) {
-    let found = false;
-    let z = num1;
-    console.log(z);
-    let k = num2;
-    console.log(k);
-    let x=1;
-    while (found === false){
-        let j = ((1+(x*z))/k);
-        console.log(j % 1);
-        console.log(j % 1 === 0);
-        x++;
-        if (j % 1 == 0){
-            console.log(j);
-            found = true;
-            return j;
-        }
-    }
-    return j;
+
+function findj(z, k) {
+  let found = false;
+  console.log(z);
+  console.log(k);
+  let x=1;
+  while (found === false){
+      let j = ((1+(x*z))/k);
+      console.log(j % 1);
+      console.log(j % 1 === 0);
+      x++;
+      if (j % 1 == 0){
+          console.log(j);
+          found = true;
+          return j;
+      }
+  }
+  return j;
 }
 
 function calcularclaus(){
-    let p = randomnumber();
-    console.log(p);
-    document.getElementById('p').innerText = p;
-    let q = randomnumber();
-    console.log(q);
-    document.getElementById('q').innerText = q;
-    let n = p*q;
-    console.log(n);
-    document.getElementById('n').innerText = n;
-    let z = (p-1)*(q-1);
-    console.log(z);
-    document.getElementById('z').innerText = z;
-    let k = findCoprime(z);
-    console.log(k);
-    document.getElementById('k').innerText = k;
-    let j = findj(z, k);
-    console.log(j);
-    document.getElementById('j').innerText = j;
-    claus = [BigInt(p), BigInt(q), BigInt(n), BigInt(z), BigInt(k), BigInt(j)];
-    console.log('works');
+  console.log('1');
+  p = randomnumber();
+  console.log(p);
+  document.getElementById('p').innerText = p;
+  q = randomnumber();
+  console.log(q);
+  document.getElementById('q').innerText = q;
+  n = p*q;
+  console.log(n);
+  document.getElementById('n').innerText = n;
+  z = (p-1)*(q-1);
+  console.log(z);
+  document.getElementById('z').innerText = z;
+  k = findCoprime(z);
+  console.log(k);
+  document.getElementById('k').innerText = k;
+  j = findj(z, k);
+  console.log(j);
+  document.getElementById('j').innerText = j;
+  claus = [BigInt(p), BigInt(q), BigInt(n), BigInt(z), BigInt(k), BigInt(j)];
+  console.log('works');
 }
 
 function encriptar(){
-  let text = document.getElementById('cleartext').value;
-  let cleartext = processtext(text);
-  let length = cleartext.length;
-  let ciphertext = [];
-  for (i=0; i<length; i++){
-    console.log(claus);
-    ciphertext[i] = BigInt(((BigInt(cleartext[i])**claus[4]) % claus[2]));
-    console.log(ciphertext);
-    document.getElementById('resultat').innerText = ciphertext;
+  console.log(claus);
+  text = document.getElementById('cleartext').value;
+  cleartext = text.toUpperCase();
+  let count = cleartext.length;
+  console.log(count);
+  let clearnums = [];
+  for (i=0; i<count; i++){
+      clearnums[i] = cleartext.charCodeAt(i);
   }
+  console.log(clearnums);
+  let clearnum = clearnums.join('');
+  console.log(clearnum);
+  cleartext = BigInt(clearnum);
+  ciphertext = BigInt(((cleartext**claus[4]) % claus[2]));
   console.log(ciphertext);
-  let textencriptat = ciphertext.join('');
   document.getElementById('resultat').innerText = ciphertext;
-  return ciphertext;
-} 
+}
 
 function desencriptar(){
-  textencriptat = document.getElementById('ciphertext').value;
-  console.log(textencriptat);
-  let ciphertext = textencriptat.split(',');
+  console.log('botonfunciona');
+  console.log(claus);
+  ciphertext = BigInt(ciphertext);
   console.log(ciphertext);
-  let length = ciphertext.length;
-  let result = [];
-  for (i=0; i<length; i++){
-    console.log(claus);
-    cleartext[i] = BigInt(((BigInt(ciphertext[i])**claus[5]) % claus[2]));
-    console.log(cleartext);
-    result[i] = getLetter(Number(cleartext[i]));
-    console.log(result);
+  cleartext = BigInt((ciphertext ** claus[5]) % claus[2]);
+  let resultat = Number(cleartext);
+  console.log(resultat);
+  let text = [];
+  resultat = resultat.toString();
+  let tamany = resultat.length;
+  console.log(tamany);
+  let count = 0;
+  let number = resultat.split('');
+  console.log(number);
+  for (i=0; i<tamany/2; i++){
+      text[i] = number[count] + number[count+1];
+      count = count+2;
   }
-  console.log(cleartext);
-  let textfinal = result.join('');
-  console.log(result);
-  document.getElementById('resultat2').innerText = textfinal;
+  let letters = [];
+  for (i=0; i<tamany/2; i++){
+      letters[i] = String.fromCharCode(text[i]);
+  }
+  document.getElementById('resultat2').innerText = letters.join('');
 }
 
 function getLetter(num){
@@ -229,7 +238,7 @@ for (let i=0, l=from.length; i<l; i++) {
 }
 str.replace(/[^a-z0-9]/g, '');
 return str;
-}  
+}
 
 function processtext(str){
   let text = str;
@@ -243,8 +252,7 @@ function processtext(str){
 
 window.onload = function(){
     const boton1 = document.getElementById('crearclaus');
-    boton1.addEventListener('click', calcularclaus);   
-    boton1.addEventListener('click', funciona);
+    boton1.addEventListener('click', calcularclaus);
     const boton2 = document.getElementById('encriptar');
     boton2.addEventListener('click', encriptar);
     const boton3 = document.getElementById('desencriptar');
